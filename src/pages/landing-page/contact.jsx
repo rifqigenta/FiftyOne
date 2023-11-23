@@ -17,7 +17,7 @@ export const Contact = () => {
         <img className="Istockphoto1180581523612x612RemovebgPreview2 w-96 h-96 left-[919.12px] top-[553px] absolute origin-top-left rotate-[20deg] opacity-50 blur-3xl" src="https://via.placeholder.com/572x436" />
         <img className="Istockphoto1180581523612x612RemovebgPreview1 w-96 h-96 left-[761px] top-[573px] absolute" src="https://via.placeholder.com/572x436" />
         <div className="Group1000001753 w-96 h-96 left-[185px] top-[114px] absolute">
-          <div className="Rectangle2 w-[70vh] h-[90vh] bg-[#002c02] left- top-0 absolute bg-zinc-300 rounded-lg" />
+          <div className="Rectangle2 w-[70vh] h-[90vh] bg-[#002C02] left- top-0 absolute bg-zinc-300 rounded-lg" />
           <div className="KotakInformasi-no-wrap w-[40vh] left-[47px] top-[60px] absolute text-4xl font-bold text-white font-['Poppins']">Kotak Informasi</div>
           <div className="KotakInformasi-no-wrap w-[40vh] left-[47px] top-[100px] absolute text-1xl font-normal text-white font-['Poppins']">Katakan sesuatu untuk memulai obrolan langsung! </div>
           <div className="+1012 3456 789 w-96 left-[20vh] top-[35vh] absolute text-1xl font-normal text-white font-['Poppins']">+1012 3456 789 </div>

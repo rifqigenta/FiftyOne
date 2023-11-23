@@ -1,10 +1,26 @@
 import React from "react";
+import cewekdiskon from "../../assets/About/cewekdiskon.svg";
+import jeruk from "../../assets/About/jeruk.svg";
+import sangyur from "../../assets/About/sangyur.svg";
+import daunpisang from "../../assets/About/daunpisang.svg";
+import ijo from "../../assets/About/ijo.svg";
+import cara1 from "../../assets/About/cara1.svg";
+import cara2 from "../../assets/About/cara2.svg";
+import cara3 from "../../assets/About/cara3.svg";
+import petani1 from "../../assets/About/petani1.svg";
+import hp from "../../assets/About/hp.svg";
+import daun from "../../assets/About/daun.svg";
+import bintang from "../../assets/About/bintang.svg";
+import truck from "../../assets/About/truck.svg";
+import headphone from "../../assets/About/headphone.svg";
+import bag from "../../assets/About/bag.svg";
+import pack from "../../assets/About/pack.svg";
 
 export const About = () => {
   return (
     <>
-    <div className="About w-96 h-96 relative bg-zinc-300">
-      <div className="HomePage w-96 h-96 left-0 top-[68px] absolute bg-white">
+    <div className="About w-screen h-96 relative bg-zinc-300">
+      <div className="HomePage w-screen h-96 left-0 top-[68px] absolute bg-white">
         <div className="Rectangle1 w-96 h-96 left-0 top-0 absolute bg-zinc-300" />
         <div className="Ellipse1 w-72 h-72 left-0 top-0 absolute bg-teal-700 bg-opacity-50 rounded-full blur-3xl" />
         <div className="Ellipse2 w-72 h-72 left-[664px] top-[266px] absolute bg-teal-700 bg-opacity-50 rounded-full blur-3xl" />
@@ -13,7 +29,7 @@ export const About = () => {
         <img className="Rectangle w-96 h-96 left-0 top-0 absolute" src="https://via.placeholder.com/1440x982" />
         <img className="PlanetEarthWithPlantLogoDesignVector29145444RemovebgPreview1 w-40 h-32 left-[76px] top-0 absolute" src="https://via.placeholder.com/157x136" />
         <img className="LeafPlantLeavesFlowerPngFavpngW8nipqstkckgwxfnfhwap4byaRemovebgPreview2 w-96 h-96 left-[927px] top-[336.80px] absolute origin-top-left rotate-[-20deg] opacity-50 blur-3xl" src="https://via.placeholder.com/552x452" />
-        <img className="LeafPlantLeavesFlowerPngFavpngW8nipqstkckgwxfnfhwap4byaRemovebgPreview1 w-96 h-96 left-[995px] top-[197px] absolute" src="https://via.placeholder.com/552x452" />
+        <img className="LeafPlantLeavesFlowerPngFavpngW8nipqstkckgwxfnfhwap4byaRemovebgPreview1 w-96 h-96 left-[995px] top-[197px] absolute" src={daunpisang} />
         <img className="Istockphoto1180581523612x612RemovebgPreview2 w-96 h-96 left-[919.12px] top-[553px] absolute origin-top-left rotate-[20deg] opacity-50 blur-3xl" src="https://via.placeholder.com/572x436" />
         <img className="Istockphoto1180581523612x612RemovebgPreview1 w-96 h-96 left-[761px] top-[573px] absolute" src="https://via.placeholder.com/572x436" />
         <div className="Info left-[806px] top-[30px] absolute flex-col justify-start items-start gap-6 inline-flex">
@@ -44,14 +60,14 @@ export const About = () => {
           </div>
         </div>
         <div className="Group1000001755 w-96 h-96 left-[91px] top-[69px] absolute">
-          <img className="Step2Review01 w-96 h-96 left-0 top-0 absolute" src="https://via.placeholder.com/418x398" />
+          <img className="Step2Review01 w-96 h-96 left-0 top-0 absolute" src={cewekdiskon} />
           <div className="Bannar w-60 h-56 left-[411px] top-[181px] absolute backdrop-blur-sm justify-center items-center inline-flex">
-            <img className="Bg w-60 h-56 origin-top-left rotate-180 rounded-lg" src="https://via.placeholder.com/243x217" />
+            <img className="Bg w-60 h-56 origin-top-left rounded-lg" src={sangyur} />
           </div>
-          <img className="Image w-60 h-48 left-[411px] top-[0.94px] absolute rounded-lg" src="https://via.placeholder.com/243x200" />
+          <img className="Image w-60 h-48 left-[411px] top-[0.94px] absolute rounded-lg" src={jeruk} />
         </div>
         <div className="Rectangle3850 w-40 h-40 left-[405px] top-[189px] absolute bg-gradient-to-b from-zinc-300 to-zinc-300 backdrop-blur-sm" />
-        <div className="Rectangle3851 w-48 h-40 left-[402px] top-[182px] absolute bg-gradient-to-b from-zinc-300 via-zinc-300 to-zinc-300" />
+        <div className="Rectangle3851 w-48 h-40 left-[402px] top-[182px] absolute bg-gradient-to-b from-zinc-300 via-zinc-300 to-zinc-300 shadow-lg" />
         <div className="Info h-24 left-[413px] top-[215px] absolute flex-col justify-start items-start gap-6 inline-flex">
           <div className="Frame216 flex-col justify-start items-start gap-3 flex">
             <div className="Frame217 flex-col justify-start items-start gap-2 flex">
@@ -67,39 +83,39 @@ export const About = () => {
         <div className="Group w-3.5 h-3 relative">
         </div>
       </div>
-      <img className="Section w-96 h-96 pt-36 pb-9 left-0 top-[634px] absolute" src="https://via.placeholder.com/1440x1619" />
-      <div className="NdSection w-96 h-20 px-6 py-6 left-[135px] top-[593px] absolute bg-white rounded-lg shadow flex-col justify-center items-center gap-4 inline-flex">
+      <img className="Section w-screen h-[230vh] left-0 top-[615px] absolute" src={ijo} />
+      <div className="NdSection w-[170vh] h-20 px-6 py-6 left-[135px] top-[593px] absolute bg-white rounded-lg shadow flex-col justify-center items-center gap-4 inline-flex">
         <div className="TentangKami text-center text-black text-4xl font-bold font-['Poppins'] leading-10">Tentang Kami</div>
       </div>
-      <img className="Image w-96 h-96 left-[781px] top-[784px] absolute rounded-lg" src="https://via.placeholder.com/510x381" />
+      <img className="Image w-96 h-96 left-[681px] top-[724px] absolute rounded-lg" src={petani1} />
       <div className="Kami w-96 left-[91px] top-[765px] absolute font-['Poppins'] text-justify"><b>Kami adalah inisiatif berbasis daring</b> yang bertujuan memberikan solusi terkini untuk memenuhi kebutuhan harian masyarakat perkotaan yang sibuk. Dibentuk berdasarkan wawasan dari riset mendalam, kami memahami bahwa kesibukan kerja seringkali menjadi hambatan bagi banyak individu untuk mendapatkan sayuran segar dan bahan memasak berkualitas. Dengan memahami permasalahan ini, kami berkomitmen untuk menghadirkan kemudahan belanja melalui platform daring yang inovatif.</div>
-      <img className="Image w-96 h-96 left-[123px] top-[1361px] absolute rounded-lg" src="https://via.placeholder.com/510x381" />
+      <img className="Image w-96 h-96 left-[123px] top-[1261px] absolute rounded-lg" src={petani1} />
       <div className="Revolusi w-96 left-[707px] top-[1259px] absolute font-['Poppins'] text-justify"><b>Revolusi Belanja Daring untuk Masyarakat Perkotaan:</b> Kami berdedikasi untuk menghadirkan pengalaman belanja yang unik, memungkinkan pelanggan kami untuk memilih dan mendapatkan produk sayuran serta bahan memasak dengan mudah tanpa meninggalkan kenyamanan rumah. Layanan pengiriman kami difokuskan pada keamanan dan kesegaran produk, bekerja sama dengan petani lokal dan pedagang terpercaya untuk menjamin kualitas yang unggul. Kami juga menyediakan paket masak dengan resep lengkap, memberikan solusi praktis bagi mereka yang menginginkan pengalaman memasak yang lebih menyenangkan.</div>
-      <div className="DenganSemangatUntukMengatasiKendalaKeterbatasanWaktuKamiMembangunPlatformDaringYangRamahPenggunaMemberikanInformasiYangJelasTentangSetiapProdukYangKamiTawarkanKamiPercayaBahwaMelaluiInovasiIniKamiTidakHanyaMenyediakanSolusiBelanjaYangEfisienTetapiJugaMenginspirasiMasyarakatPerkotaanUntukLebihMenikmatiProsesMemasakDenganBahanBahanBerkualitasTinggiBergabunglahDenganKamiDalamRevolusiBelanjaDaringYangMemprioritaskanKualitasKenyamananDanKepuasanPelanggan w-96 left-[97px] top-[1905px] absolute text-justify text-white text-2xl font-normal font-['Poppins'] leading-9">Dengan semangat untuk mengatasi kendala keterbatasan waktu, kami membangun platform daring yang ramah pengguna, memberikan informasi yang jelas tentang setiap produk yang kami tawarkan. Kami percaya bahwa melalui inovasi ini, kami tidak hanya menyediakan solusi belanja yang efisien tetapi juga menginspirasi masyarakat perkotaan untuk lebih menikmati proses memasak dengan bahan-bahan berkualitas tinggi. Bergabunglah dengan kami dalam revolusi belanja daring yang memprioritaskan kualitas, kenyamanan, dan kepuasan pelanggan.</div>
-      <div className="Rectangle3852 w-96 h-96 left-0 top-[2253px] absolute bg-white" />
+      <div className="DenganSemangatUntukMengatasiKendalaKeterbatasanWaktuKamiMembangunPlatformDaringYangRamahPenggunaMemberikanInformasiYangJelasTentangSetiapProdukYangKamiTawarkanKamiPercayaBahwaMelaluiInovasiIniKamiTidakHanyaMenyediakanSolusiBelanjaYangEfisienTetapiJugaMenginspirasiMasyarakatPerkotaanUntukLebihMenikmatiProsesMemasakDenganBahanBahanBerkualitasTinggiBergabunglahDenganKamiDalamRevolusiBelanjaDaringYangMemprioritaskanKualitasKenyamananDanKepuasanPelanggan w-[130vh] left-[97px] top-[1655px] absolute text-justify text-black text-1xl font-['Poppins'] leading-7">Dengan semangat untuk mengatasi kendala keterbatasan waktu, kami membangun platform daring yang ramah pengguna, memberikan informasi yang jelas tentang setiap produk yang kami tawarkan. Kami percaya bahwa melalui inovasi ini, kami tidak hanya menyediakan solusi belanja yang efisien tetapi juga menginspirasi masyarakat perkotaan untuk lebih menikmati proses memasak dengan bahan-bahan berkualitas tinggi. Bergabunglah dengan kami dalam revolusi belanja daring yang memprioritaskan kualitas, kenyamanan, dan kepuasan pelanggan.</div>
+      <div className="Rectangle3852 w-screen h-[70vh] left-0 top-[2253px] absolute bg-white" />
       <div className="FeaturedProduct w-96 h-96 left-[113px] top-[2297px] absolute">
-        <div className="Group5 w-96 h-60 left-[103px] top-[78px] absolute">
-          <img className="Rectangle5 w-64 h-60 left-0 top-0 absolute" src="https://via.placeholder.com/263x237" />
-          <img className="Rectangle5 w-64 h-60 left-[363px] top-0 absolute" src="https://via.placeholder.com/263x237" />
-          <img className="Rectangle5 w-64 h-60 left-[726px] top-0 absolute" src="https://via.placeholder.com/263x237" />
+        <div className="Group5 w-96 h-60 left-[103px] top-[78px] absolute ">
+          <img className="Rectangle5 w-64 h-60 left-0 top-0 absolute" src={cara1} />
+          <img className="Rectangle5 w-64 h-60 left-[363px] top-0 absolute" src={cara2} />
+          <img className="Rectangle5 w-64 h-60 left-[726px] top-0 absolute" src={cara3} />
         </div>
         <div className="UnduhAplikasiForEatDiPlaystoreLaluGunakanBilahPencarianUntukMenemukanSayuranAtauPunYgDibutuhkan left-[88px] top-[339px] absolute text-center text-black text-base font-normal font-['Poppins'] leading-none">1.<br/>Unduh Aplikasi For Eat di playstore,<br/>lalu,gunakan bilah pencarian untuk<br/>menemukan sayuran atau pun yg <br/>dibutuhkan.</div>
-        <div className="TinjauSetiapItemJelajahiDetailSetiapProdukUntukMemastikanKualitasDanKesegarannya left-[478px] top-[339px] absolute text-center text-black text-base font-normal font-['Poppins'] leading-none">2.<br/>Tinjau setiap item. <br/>Jelajahi detail setiap produk <br/>untuk memastikan kualitas <br/>dan kesegarannya.</div>
+        <div className="TinjauSetiapItemJelajahiDetailSetiapProdukUntukMemastikanKualitasDanKesegarannya w-80 left-[438px] top-[339px] absolute text-center text-black text-base font-normal font-['Poppins'] leading-none">2.<br/>Tinjau setiap item. <br/>Jelajahi detail setiap produk <br/>untuk memastikan kualitas <br/>dan kesegarannya.</div>
         <div className="SetelahAndaMenemukanItemYangDiinginkanTambahkanItemTersebutKeKeranjangDanLanjutkanKePembayaran w-80 left-[801px] top-[339px] absolute text-center text-black text-base font-normal font-['Poppins'] leading-none"> 3..<br/>Setelah Anda menemukan item yang diinginkan, tambahkan item tersebut ke keranjang dan lanjutkan ke pembayaran.</div>
       </div>
-      <div className="Frame1000001758 w-96 h-20 px-4 py-9 left-[135px] top-[2211px] absolute bg-neutral-400 rounded-lg justify-center items-center gap-2.5 inline-flex">
+      <div className="Frame1000001758 w-[170vh] h-20 px-4 py-9 left-[135px] top-[2211px] absolute bg-[#7EB685] rounded-lg justify-center items-center gap-2.5 inline-flex">
         <div className="CaraBerbelanjaDiForeat text-center text-black text-4xl font-bold font-['Poppins'] leading-10">Cara Berbelanja di ForEat</div>
       </div>
-      <div className="MacbookPro141 w-96 h-96 left-0 top-[2796px] absolute bg-gradient-to-bl from-emerald-700 via-teal-100 to-emerald-700 shadow">
+      <div className="MacbookPro141 w-[200vh] h-[110vh] left-0 top-[2796px] absolute bg-gradient-to-bl from-emerald-700 via-teal-100 to-emerald-700 shadow">
         <div className="LaFacebook w-8 h-8 left-[279px] top-0 absolute" />
         <div className="Ellipse27 w-72 h-72 left-[1242px] top-[709px] absolute bg-teal-700 bg-opacity-25 rounded-full shadow blur-3xl" />
         <div className="AboutMe w-96 h-96 left-[698px] top-[218px] absolute">
           <div className="Heading w-96 h-28 left-0 top-0 absolute flex-col justify-start items-start gap-5 inline-flex">
-            <div className="ApakahJadwalPadatAndaMembuatSulitUntukMemperolehSayuranSegarDanBahanMemasakBerkualitasKamiDiForEatHadirUntukMemberikanSolusiDenganPlatformDaringKamiBelanjaSayuranSegarDanBahanMemasakBerkualitasTinggiMenjadiLebihMudahDariSebelumnya w-96 text-black text-base font-normal font-['Poppins'] leading-normal">Apakah jadwal padat Anda membuat sulit untuk memperoleh sayuran segar dan bahan memasak berkualitas? Kami di For Eat hadir untuk memberikan solusi! Dengan platform daring kami, belanja sayuran segar dan bahan memasak berkualitas tinggi menjadi lebih mudah dari sebelumnya.</div>
+            <div className="ApakahJadwalPadatAndaMembuatSulitUntukMemperolehSayuranSegarDanBahanMemasakBerkualitasKamiDiForEatHadirUntukMemberikanSolusiDenganPlatformDaringKamiBelanjaSayuranSegarDanBahanMemasakBerkualitasTinggiMenjadiLebihMudahDariSebelumnya w-[74vh] text-black text-base font-normal font-['Poppins'] leading-normal">Apakah jadwal padat Anda membuat sulit untuk memperoleh sayuran segar dan bahan memasak berkualitas? Kami di For Eat hadir untuk memberikan solusi! Dengan platform daring kami, belanja sayuran segar dan bahan memasak berkualitas tinggi menjadi lebih mudah dari sebelumnya.</div>
           </div>
           <div className="Feature w-80 h-16 left-0 top-[145px] absolute bg-white justify-start items-center gap-4 inline-flex">
             <div className="Icon p-4 bg-green-600 bg-opacity-10 rounded-full flex-col justify-start items-start inline-flex">
-            <div className="Leaf2 w-10 h-10 relative" />
+            <img w-10 h-10 relative src={daun} />
             </div>
             <div className="Info flex-col justify-center items-start gap-2 inline-flex">
               <div className="MakananSehat w-56 text-zinc-900 text-lg font-medium font-['Poppins'] leading-relaxed">100% Makanan Sehat</div>
@@ -109,6 +125,7 @@ export const About = () => {
           <div className="Feature w-80 h-16 left-0 top-[241px] absolute bg-white justify-start items-center gap-4 inline-flex">
             <div className="Icon p-4 bg-green-600 bg-opacity-10 rounded-full flex-col justify-start items-start inline-flex">
               <div className="Stars1 w-10 h-10 relative">
+                <img src={bintang} />
                 <div className="Group w-10 h-10 left-0 top-0 absolute">
                 </div>
               </div>
@@ -120,7 +137,7 @@ export const About = () => {
           </div>
           <div className="Feature w-80 h-16 left-0 top-[337px] absolute bg-white justify-start items-center gap-4 inline-flex">
             <div className="Icon p-4 bg-green-600 bg-opacity-10 rounded-full flex-col justify-start items-start inline-flex">
-              <div className="DeliveryTruck1 w-10 h-10 relative" />
+              <img w-10 h-10 relative src={truck} />
             </div>
             <div className="Info flex-col justify-center items-start gap-2 inline-flex">
               <div className="GratisOngkir w-56 text-zinc-900 text-lg font-medium font-['Poppins'] leading-relaxed">Gratis Ongkir</div>
@@ -128,8 +145,8 @@ export const About = () => {
             </div>
           </div>
           <div className="Feature w-80 h-16 left-[336px] top-[146px] absolute bg-white justify-start items-center gap-4 inline-flex">
-            <div className="Icon p-4 bg-green-600 bg-opacity-10 rounded-full flex-col justify-start items-start inline-flex">
-              <div className="Headphones1 w-9 h-9 relative" /> 
+            <div className="Icon p-4 bg-green-600 bg-opacity-10 rounded-full flex-col justify-start items-start inline-flex"> 
+              <img src={headphone} />
             </div>
             <div className="Info flex-col justify-center items-start gap-2 inline-flex">
               <div className="DukunganLayanan247 w-56 text-zinc-900 text-lg font-medium font-['Poppins'] leading-relaxed">Dukungan Layanan24/7</div>
@@ -139,6 +156,7 @@ export const About = () => {
           <div className="Feature w-80 h-16 left-[336px] top-[242px] absolute bg-white justify-start items-center gap-4 inline-flex">
             <div className="Icon p-4 bg-green-600 bg-opacity-10 rounded-full flex-col justify-start items-start inline-flex">
               <div className="ShoppingBag w-9 h-9 relative">
+                <img src={bag} />
                 <div className="Group w-7 h-9 left-[3.62px] top-[-0px] absolute">
                 </div>
               </div>
@@ -149,7 +167,7 @@ export const About = () => {
           </div>
           <div className="Feature w-80 h-16 left-[336px] top-[338px] absolute bg-white justify-start items-center gap-4 inline-flex">
             <div className="Icon p-4 bg-green-600 bg-opacity-10 rounded-full flex-col justify-start items-start inline-flex">
-              <div className="Package w-9 h-9 relative" />
+              <img src={pack} />
             </div>
             <div className="Info flex-col justify-center items-start gap-2 inline-flex">
               <div className="MakananSegar w-56 text-zinc-900 text-lg font-medium font-['Poppins'] leading-relaxed">100% Makanan Segar</div>
@@ -157,10 +175,10 @@ export const About = () => {
             </div>
           </div>
         </div>
-        <div className="KenapaHarusMemilihForEat left-[687px] top-[65px] absolute text-green-950 text-6xl font-semibold font-['Poppins'] leading-10">Kenapa <br/>Harus Memilih For Eat?</div>
-        <img className="PeopleWhoAre01 w-96 h-96 left-[81px] top-[154px] absolute rounded-lg" src="https://via.placeholder.com/561x491" />
+        <div className="KenapaHarusMemilihForEat w-[90vh] left-[687px] top-[65px] absolute text-green-950 text-6xl font-semibold font-['Poppins'] leading-15">Kenapa <br/>Harus Memilih For Eat?</div>
+        <img className="PeopleWhoAre01 w-96 h-96 left-[81px] top-[154px] absolute rounded-lg" src={hp} />
         <div className="Group79 w-96 h-96 left-0 top-[777px] absolute">
-          <div className="Rectangle61 w-96 h-96 left-0 top-[12px] absolute bg-zinc-900" />
+          <div className="Rectangle61 w-[200vh] h-96 left-0 top-[12px] absolute bg-zinc-900" />
           <div className="MaskGroup w-80 h-96 left-[2px] top-[12px] absolute">
             <div className="Bg w-80 h-96 left-0 top-0 absolute bg-zinc-900" />
             <div className="Group origin-top-left rotate-[-92.35deg] opacity-60 w-96 h-96 left-[-705.44px] top-[372.69px] absolute">
@@ -176,23 +194,16 @@ export const About = () => {
           <div className="DownloadMobileApp w-80 h-28 left-[975px] top-[121px] absolute flex-col justify-start items-start gap-3 inline-flex">
             <div className="SegeraUnduhAplikasinya text-white text-lg font-medium font-['Poppins'] leading-relaxed">Segera Unduh Aplikasinya</div>
             <div className="DownloadOurMobileApp pt-2 justify-start items-start gap-2 inline-flex">
-             <div className="AppStore p-2.5 bg-zinc-800 rounded justify-start items-center gap-1.5 flex">
-              <div className="AppleNegative1 w-7 h-7 relative" />
-              <div className="Frame145 flex-col justify-start items-start inline-flex">
-                <div className="DownloadOnThe w-24 text-zinc-400 text-xs font-normal font-['Poppins'] leading-none">Download on the</div>
-                <div className="AppStore w-24 h-6 text-white text-base font-medium font-['Poppins'] leading-normal">App Store</div>
-              </div>
-             </div>
              <div className="GooglePlay p-2.5 bg-zinc-800 rounded justify-start items-center gap-1.5 flex">
-              <div className="IconGooglePlay1 w-6 h-6 relative" />
+              <div className="IconGooglePlay1 w-12 h-6 relative" />
               <div className="Frame145 flex-col justify-start items-start inline-flex">
-                <div className="DownloadOnThe w-24 text-zinc-400 text-xs font-normal font-['Poppins'] leading-none">Download on the</div>
-                <div className="GooglePlay w-24 h-6 text-white text-base font-medium font-['Poppins'] leading-normal">Google play</div>
+                <div className="DownloadOnThe w-34 text-zinc-400 text-xs font-normal font-['Poppins'] leading-none">Download on the</div>
+                <div className="GooglePlay w-34 h-6 text-white text-base font-medium font-['Poppins'] leading-normal">Google play</div>
               </div>
              </div>
             </div>
           </div>
-          <div className="Copyright w-96 h-20 px-72 py-6 left-0 top-[348px] absolute bg-zinc-900 shadow" />
+          <div className="Copyright w-[200vh] h-20 px-72 py-6 left-0 top-[348px] absolute bg-zinc-900 shadow border" />
           <div className="ForEatEcommerce2023AllRightsReserved left-[173px] top-[375px] absolute text-zinc-500 text-sm font-normal font-['Poppins'] leading-tight">For Eat eCommerce © 2023 All Rights Reserved</div>
           <div className="Frame142 w-72 h-8 left-[998px] top-[373px] absolute justify-start items-start gap-2 inline-flex">
             <div className="MethodApplepay w-11 h-8 relative">
@@ -263,11 +274,22 @@ export const About = () => {
           </div>
         </div>
       </div>
-      <div className="Group76 w-96 h-24 left-0 top-[-29px] absolute">
-        <div className="Rectangle60 w-96 h-24 left-0 top-0 absolute bg-green-950" />
+      <div className="Group76 w-96 h-24 left-0 top-[-29px] absolute ">
+        <div className="Rectangle60 w-[200vh] h-24 left-0 top-0 absolute bg-green-950" />
         <img className="Rectangle59 w-24 h-16 left-[47px] top-[29px] absolute" src="https://via.placeholder.com/100x62" />
         <div className="LoginSebagaiAdmin w-44 h-6 left-[1218px] top-[45px] absolute justify-center items-center inline-flex">
           <div className="LoginSebagaiAdmin text-center text-white text-base font-medium font-['Poppins']">Login Sebagai Admin</div>
+        </div>
+        <div className="Group1000001759 w-96 h-7 left-[206px] top-[46px] absolute">
+          <div className="Beranda w-24 h-7 left-0 top-0 absolute justify-center items-center inline-flex">
+            <div className="Beranda text-center text-white text-xl font-bold font-['Poppins'] leading-7">Beranda</div>
+          </div>
+          <div className="Beranda w-24 h-7 px-2 left-[341px] top-0 absolute justify-center items-center inline-flex">
+            <div className="Kontak text-center text-white text-xl font-bold font-['Poppins'] leading-7">Kontak</div>
+          </div>
+            <div className="Beranda w-40 h-7 left-[136px] top-0 absolute justify-center items-center inline-flex">
+              <div className="TentangKami w-72 text-center text-white text-xl font-bold font-['Poppins'] leading-7">Tentang Kami</div>
+            </div>
         </div>
       </div>
     </div>
