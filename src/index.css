@@ -6,3 +6,25 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
+
+.carousel {
+  background-image: url("../public/beranda/hero-beranda.svg");
+  height: 716px;
+  background-size: contain;
+}
+.welcome {
+  background-image: url("../public/beranda/bg-welcome.svg");
+}
+.testi {
+  background-image: url("../public/beranda/bg-testi.svg");
+  background-size: cover;
+}
+.iklan {
+  background-image: url("../public/beranda/iklan.svg");
+  background-size: contain;
+}
+
+.footer {
+  background-image: url("../public/beranda/bg-footer.svg");
+  background-size: contain;
+}
