@@ -28,3 +28,7 @@
   background-image: url("../public/beranda/bg-footer.svg");
   background-size: contain;
 }
+.contact {
+  background-image: url("../src/assets/About/bgnya2.svg");
+  background-size: contain;
+}
