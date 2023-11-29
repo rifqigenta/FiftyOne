@@ -4,7 +4,7 @@ import Footer from "../../components/footer";
 import cewekdiskon from "../../assets/About/cewekdiskon.svg";
 import jeruk from "../../assets/About/jeruk.svg";
 import sangyur from "../../assets/About/sangyur.svg";
-import ijo from "../../assets/About/ijo.svg";
+import paman from "../../assets/About/paman.svg";
 
 export const About = () => {
   return (
@@ -12,10 +12,10 @@ export const About = () => {
      <Navbar />
      <div className="about bg-gray-300">
       <div className="Homepage flex h-[137vh]">
-        <div className="Rectangle1 items-center ml-[60px] mt-[20vh]">
-          <img className="cewekdiskon w-96 h-96 ml-32 top-14 " src={cewekdiskon} />
+        <div className="Rectangle1 items-center mt-[20vh]">
+          <img className="cewekdiskon w-96 h-96 ml-48 top-14 " src={cewekdiskon} />
             <div className="Bannar w-96 backdrop-blur-sm justify-center items-center inline-grid">
-              <img className="Sangyur w-60 left-[520px] bottom-[25px] absolute " src={sangyur} />
+              <img className="Sangyur w-60 left-[580px] bottom-[25px] absolute " src={sangyur} />
             </div>
             <img className="Image w-60 left-[581px] top-[157px] absolute rounded-lg" src={jeruk} />
             <div className="Rectang2 w-44 h-32 left-[480px] bottom-[300px] absolute bg-gradient-to-b from-zinc-300 " />
@@ -45,29 +45,37 @@ export const About = () => {
                     <div className="Heading justify-start items-center gap-3 inline-flex">
                       <div className="Check w-6 h-6 relative">
                         <div className="Rectangle7 w-6 h-6 left-0 top-0 absolute bg-green-600 rounded-full" />
-                        <div className="Check1 w-4 h-4 left-[4px] top-[4px] absolute" />
+                        <div className="Check1 w-4 h-4 left-[4px] " />
                       </div>
                       <div className="ProdukSegarDanBerkualitasSetiapHariUntukAnda w-96 text-zinc-900 text-lg font-medium font-['Poppins'] leading-relaxed">Produk segar dan berkualitas setiap hari untuk Anda.</div>
                     </div>
                     <div className="Description pl-8 justify-start items-start inline-flex">
-                      <div className="atas w-96 text-black text-sm font-light font-['Poppins'] leading-tight">Apakah Anda mencari sumber terpercaya untuk memenuhi kebutuhan sayuran segar dan produk berkualitas setiap hari? ForEat adalah solusi terbaik untuk kebutuhan makanan Anda yang sehat dan bergizi.</div>
+                      <div className="atas w-96 text-black text-sm font-light leading-tight">Apakah Anda mencari sumber terpercaya untuk memenuhi kebutuhan sayuran segar dan produk berkualitas setiap hari? ForEat adalah solusi terbaik untuk kebutuhan makanan Anda yang sehat dan bergizi.</div>
                     </div>
                   </div>
-                  <button class="mt-4 items-center bg-[#00B207] text-white p-6 rounded-full hover:bg-[#002c02] ml-5 focus:outline-none focus:shadow-outline-blue" type="submit">Belanja sekarang</button>
+                  <button class=" items-center bg-[#00B207] text-white p-3 rounded-full hover:bg-[#002c02] ml-5 focus:outline-none focus:shadow-outline-blue" type="submit">Belanja sekarang</button>
                 </div>
                 </div> 
               </div>
             </div>
-            <div className=" w-screen h-96">
-            <img className="w-screen h" src={ijo} />
-            <div className=" bg-white justify-center items-center rounded-md p-4"> 
-            <div className="TentangKami flex justify-center items-center font-bold ">Tentang Kami</div>
+            <div className="ijo godong mt-20">
+            <div className="backijo h-[100vh] ">
+            <div className="kalimat1 mx-32  text-white text-2xl text-justify p-2 ">
+              <div className="teks flex gap-28 mt-20 tracking-wide">
+              <p><strong>Kami adalah inisiatif berbasis daring</strong> yang bertujuan memberikan solusi terkini untuk memenuhi kebutuhan harian masyarakat perkotaan yang sibuk. Dibentuk berdasarkan wawasan dari riset mendalam, kami memahami bahwa kesibukan kerja seringkali menjadi hambatan bagi banyak individu untuk mendapatkan sayuran segar dan bahan memasak berkualitas. Dengan memahami permasalahan ini, kami berkomitmen untuk menghadirkan kemudahan belanja melalui platform daring yang inovatif.</p>
+              <img className="paman " src={paman} />
+              </div>
             </div>
+              <div className=" bg-white flex justify-center items-center w-[80vw] bottom-[70px] left-[10vw] absolute rounded-md p-4">
+                <div className="TentangKami flex justify-center items-center text-3xl font-bold ">Tentang Kami</div>
+                </div>
+              </div>
             </div>
         </div>
       </div>
       <Footer/>
      </div>
+     {/* <Footer/> */}
      
     </>
     
