@@ -1,6 +1,6 @@
 import React from "react";
-import SidebarAdmin from "../../components/layout/sidebar-admin";
+import AdminSidebar from "../../components/layout/AdminSidebar";
 
 export const Dashboard = () => {
-  return <SidebarAdmin />;
+  return <AdminSidebar />;
 };
