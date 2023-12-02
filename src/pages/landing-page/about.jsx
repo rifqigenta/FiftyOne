@@ -7,6 +7,14 @@ import sangyur from "../../assets/About/sangyur.svg";
 import paman from "../../assets/About/paman.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import cara1 from "../../assets/About/cara1.svg";
+import hp from "../../assets/About/hp.svg";
+import daun from "../../assets/About/daun.svg";
+import bintang from "../../assets/About/bintang.svg";
+import truck from "../../assets/About/truck.svg";
+import headphone from "../../assets/About/headphone.svg";
+import pack from "../../assets/About/pack.svg";
+import bag from "../../assets/About/bag.svg";
 
 export const About = () => {
   return (
@@ -80,7 +88,7 @@ export const About = () => {
           </div>
         </div>
         <div className='ijo godong mt-20'>
-          <div className='backijo h-[100vh] '>
+          <div className='backijo h-[150vh] '>
             <div className='kalimat1 mx-32  text-white text-2xl text-justify p-2 '>
               <div className='teks flex gap-28 mt-20 tracking-wide'>
                 <p>
@@ -91,14 +99,122 @@ export const About = () => {
                 <img className='paman ' src={paman} />
               </div>
             </div>
-            <div className=' bg-white flex justify-center items-center w-[80vw] bottom-[25px] left-[10vw] absolute rounded-md p-4'>
+            <div className='kalimat1 mx-32  text-white text-2xl text-justify p-2 '>
+              <div className='teks flex gap-28 mt-20 tracking-wide'>
+              <img className='paman ' src={paman} />
+                <p>
+                  <strong>Kami adalah inisiatif berbasis daring</strong> yang bertujuan memberikan solusi terkini untuk memenuhi kebutuhan harian masyarakat perkotaan yang sibuk. Dibentuk berdasarkan
+                  wawasan dari riset mendalam, kami memahami bahwa kesibukan kerja seringkali menjadi hambatan bagi banyak individu untuk mendapatkan sayuran segar dan bahan memasak berkualitas.
+                  Dengan memahami permasalahan ini, kami berkomitmen untuk menghadirkan kemudahan belanja melalui platform daring yang inovatif.
+                </p>
+              </div>
+            </div>
+            
+            <div className=' bg-white flex justify-center items-center w-[80vw] bottom-[75px] left-[10vw] absolute rounded-md p-4'>
               <div className='TentangKami flex justify-center items-center text-3xl font-bold '>Tentang Kami</div>
             </div>
           </div>
+          <div className="rectangle bg-white h-[80vh] ">
+            <div className="flex ml-[230px] ">
+              <div className=" flex mt-[100px] gap-32">
+              <img src={cara1} />
+              <img src={cara1} />
+              <img src={cara1} />
+              </div>
+            </div>
+            <div className="kalimat flex ml-[200px] gap-24">
+              <div className="mt-[50px] ">
+                <img src="" alt="" />
+                <h1 className="text-center">1.</h1>
+                <p className="cara1 w-[20vw] text-center">Unduh Aplikasi ForEat di playstore lalu, gunakan bilah pencarian untuk menemukan sayuran atau pun yang di butuhkan</p>
+              </div>
+              <div className="mt-[50px] ">
+                <h1 className="text-center">2.</h1>
+                <p className="cara2 w-[18vw] text-center ">Tinjau setiap item. Jelajahi detail setiap produk untuk memastikan kualitas dan kesegarannya.</p>
+              </div>
+              <div className="mt-[50px] ">
+              <h1 className="text-center">3.</h1>
+                <p className="cara3 w-[21vw] text-center">Setelah Anda menemukan item yang di inginkan, tambahkan item tersebut ke keranjang dan lanjutkan ke pembayaran.</p>
+              </div>
+            </div>
+            <div className="rectagle bg-[#7EB685] flex justify-center items-center w-[80vw] top-[1710px] left-[10vw] absolute rounded-md p-4 ">
+              <div className="cara text-black flex justify-center items-center text-3xl font-bold ">Cara Berbelanja di ForEat</div>
+            </div>
+          </div>
+          <div className="rectangle bg-[#94AF9F] h-[110vh]">
+            <div className="flex ml-[120px] gap-28">
+              <div className="flex mt-[150px]">
+                <div className="m">
+                <img src={hp} />
+                </div>
+              </div>
+              <div>
+                <h1 className="mt-32 w-[23vw] text-6xl font-semibold ">Kenapa</h1>
+                <h1 className="mt-4 w-[50vw] text-6xl font-semibold">Harus Melilih ForEat?</h1>
+                <p className=" mt-7 w-[40vw]">Apakah jadwal padat Anda membuat sulit untuk memperoleh sayuran segar dan bahan memasak berkualitas? Kami dari ForEat hadir untuk memberikan soluis! dengan platform daring kami, belanja sayuran segar dan bahan memasak berkualitas tinggi menjadi lebih mudah dari sebelumnya.</p>
+                <div className=" flex flex-col mt-3 mr-[500px] gap-6 rounded-lg">
+                <div className="rectangle flex bg-white h-[70px]">
+                  <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
+                    <img className="w-10 h-10 mt-[8px] ml-[8px]" src={daun} />
+                  </div>
+                  <div className="ml-3">
+                    <h1 className="font-semibold text-base mt-2">100% Makanan Sehat</h1>
+                    <p className="mt-2 text-xs">100% Makanan Sehat</p>
+                  </div>
+                </div>
+                <div className="rectangle flex bg-white h-[70px]">
+                  <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
+                    <img className="w-10 h-10 mt-[10px] ml-[11px]" src={bintang} />
+                  </div>
+                  <div className="ml-3">
+                    <h1 className="font-semibold text-base mt-2">Pelayanan Terbaik</h1>
+                    <p className="mt-2 text-xs">Membuat Pelanggan Bahagia</p>
+                  </div>
+                </div>
+                <div className="rectangle flex bg-white h-[70px]">
+                  <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
+                    <img className="w-10 h-10 mt-[11px] ml-[11px]" src={truck} />
+                  </div>
+                  <div className="ml-3">
+                    <h1 className="font-semibold text-base mt-2">Gratis Ongkir</h1>
+                    <p className="mt-2 text-xs">Bebas Ongkir & Diskon</p>
+                  </div>
+                </div>
+                <div className="rectangle flex bg-white h-[70px]">
+                  <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
+                    <img className="w-10 h-10 mt-[11px] ml-[11px]" src={headphone} />
+                  </div>
+                  <div className="ml-3">
+                    <h1 className="font-semibold text-base mt-2">Dukungan Layanan 24/7</h1>
+                    <p className="mt-2 text-xs">Akses cepat ke kontak</p>
+                  </div>
+                </div>
+                <div className="rectangle flex bg-white h-[70px]">
+                  <div className="bg-[#E6F8E7] w-20 h-16 mt-[3px] rounded-full">
+                    <img className="w-10 h-10 mt-[11px] ml-[11px]" src={bag} />
+                  </div>
+                  <div className="ml-3">
+                    <h1 className="font-semibold text-base mt-2">100% Pembayarannya Aman</h1>
+                    
+                  </div>
+                </div>
+                <div className="rectangle flex bg-white h-[70px]">
+                  <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
+                    <img className="w-10 h-10 mt-[11px] ml-[11px]" src={pack} />
+                  </div>
+                  <div className="ml-3">
+                    <h1 className="font-semibold text-base mt-2">100% Makanan Sehat</h1>
+                    <p className="mt-2 text-xs">100% Mantap</p>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 };
