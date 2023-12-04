@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useContext, createContext } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -36,19 +37,21 @@ const MenuCollapse = ({ menus, title, setMenuActive }) => {
                 {menus.map((value, index) => {
                   const menuActive = value.isActive ? "bg-[#008E06] rounded-md py-1" : "py-1";
                   return (
-                    <li
-                      key={index}
-                      className={`${menuActive}grid gap-y-4 menu cursor-pointer`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setMenuActive(index);
-                      }}
-                    >
-                      <div className='flex py-0'>
-                        {value.icon}
-                        {value.name}
-                      </div>
-                    </li>
+                    <Link to={`/admin/stock/${value.name}`}>
+                      <li
+                        key={index}
+                        className={`${menuActive}grid gap-y-4 menu cursor-pointer`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setMenuActive(index);
+                        }}
+                      >
+                        <div className={`${menuActive}flex py-0`}>
+                          {value.icon}
+                          {value.name}
+                        </div>
+                      </li>
+                    </Link>
                   );
                 })}
               </ul>
@@ -60,7 +63,7 @@ const MenuCollapse = ({ menus, title, setMenuActive }) => {
   );
 };
 
-const Dashboard = ({ title }) => {
+const Dashboard = ({ title, setMenuActive }) => {
   const { expanded } = useContext(SidebarContext);
   return (
     <>
@@ -77,7 +80,7 @@ const Dashboard = ({ title }) => {
     </>
   );
 };
-const UserAccount = ({ title }) => {
+const UserAccount = ({ title, setMenuActive }) => {
   const { expanded } = useContext(SidebarContext);
   return (
     <>
@@ -94,7 +97,7 @@ const UserAccount = ({ title }) => {
     </>
   );
 };
-const Report = ({ title }) => {
+const Report = ({ title, setMenuActive }) => {
   const { expanded } = useContext(SidebarContext);
   return (
     <>
@@ -178,41 +181,27 @@ const AdminSidebar = () => {
     });
     setMenuState(updatedMenus);
   };
-  // const toggleSidebarMin = () => {
-  //   return (
-  //     <>
-  //       <div className='w-[80px] h-screen overflow-y-scroll no-scrollbar bg-[#191919] left-0 py-10 px-4'>
-  //         <div className='grid gap-y-4 text-white'>
-  //           <img src='././beranda/ceweDiHome.svg' className='h-[100px] rounded-full m-auto' alt='' />
-  //           <h6 className='text-[22px] m-auto mb-4'>Admin </h6>
-  //           <Dashboard title='' />
-  //           <MenuCollapse menus={menuState} title='Stock' setMenuActive={setMenuActive} />
-  //           <UserAccount title='' />
-  //           <Report title='' />
-  //           <button className='m-auto w-[50px] h-[50px] btn bg-[#E7F4E8] rounded-full'>
-  //             <FontAwesomeIcon icon={faChevronRight} className='text-[#008E06] text-[22px]' />
-  //           </button>
-  //           <Logout title='Logout' />
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // };
   const [expanded, setExpanded] = useState(true);
   return (
     <>
       <SidebarContext.Provider value={{ expanded }}>
         <div
-          className={`w-[280px] h-screen overflow-y-scroll no-scrollbar bg-[#191919] left-0 py-10 px-10  transition-opacity duration-500 
+          className={`w-[280px] h-screen overflow-y-scroll no-scrollbar bg-[#191919] left-0 py-10 px-10 fixed transition-opacity duration-500 
         ${expanded ? "" : "w-[75px] h-screen px-4"}`}
         >
           <div className='grid gap-y-4 text-white'>
-            <img src='././beranda/ceweDiHome.svg' className={`h-[100px] rounded-full m-auto ${expanded ? "" : "h-[50px] rounded-full mx-0"}`} alt='' />
+            <img src='/beranda/ceweDiHome.svg' className={`h-[100px] rounded-full m-auto ${expanded ? "" : "h-[50px] rounded-full mx-0"}`} alt='' />
             <h6 className={`text-[22px] m-auto mb-4 ${expanded ? "" : "hidden"}`}>Admin </h6>
-            <Dashboard title='Dashboard' />
+            <Link to='/admin/dashboard'>
+              <Dashboard title='Dashboard' setMenuActive={setMenuActive} />
+            </Link>
             <MenuCollapse menus={menuState} title='Stock' setMenuActive={setMenuActive} />
-            <UserAccount title='User Account' />
-            <Report title='Report' />
+            <Link to='/admin/user-account'>
+              <UserAccount title='User Account' />
+            </Link>
+            <Link to='/admin/report'>
+              <Report title='Report' />
+            </Link>
             <button className={`m-auto w-[50px] h-[50px] btn bg-[#E7F4E8] rounded-full ${expanded ? "" : "w-[15px] mx-0"}`} onClick={() => setExpanded((curr) => !curr)}>
               {expanded ? (
                 <FontAwesomeIcon icon={faChevronRight} className='text-[#008E06] text-[22px] ease-in' />
