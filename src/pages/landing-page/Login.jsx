@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Google from "../../assets/About/Google.svg";
 
 const Login = () => {
   return (
@@ -29,10 +30,10 @@ const Login = () => {
             <fieldset className='border-t-[1px] mt-7 w-[23vw] border-[#999DA3'>
               <legend className=' text-center px-4 text-[#999DA3'>atau masuk dengan</legend>
             </fieldset>
-            <button class='w-[400px] mt-7 items-center bg-[#D9D9D9] text-[#4B5768] p-3 rounded-[4px] hover:bg-[#498528] focus:outline-none focus:shadow-outline-blue' type='submit'>
-              Lanjutkan dengan Google
+            <button class='flex w-[400px] mt-7 items-center bg-[#D9D9D9] text-[#4B5768] p-3 gap-3 rounded-[4px] hover:bg-[#498528] focus:outline-none focus:shadow-outline-blue' type='submit'>
+              <img src={Google} className="ml-[60px]" /> Lanjutkan dengan Google
             </button>
-            <Link>
+            <Link to="/register">
               <div className='mt-6 hover:text-[#00B207] text-[#498528] font-semibold'>
                 <a href='#'>Membuat Akun</a>
               </div>

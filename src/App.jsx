@@ -15,6 +15,7 @@ import TahuTempeTelur from "./pages/admin/Stock/TahuTempeTelur";
 import LainLain from "./pages/admin/Stock/LainLain";
 import UserAccount from "./pages/admin/UserAccount/UserAccount";
 import Report from "./pages/admin/Report/Report";
+import Register from "./pages/landing-page/Register";
 
 export const App = () => {
   return (
@@ -36,7 +37,7 @@ export const App = () => {
           <Route path='/admin/stock/lain-lain' element={<LainLain />} />
           <Route path='/admin/user-account' element={<UserAccount />} />
           <Route path='/admin/report' element={<Report />} />
-          
+          <Route path='/register' element={<Register />} />
         </Routes>
       </Router>
     </>
