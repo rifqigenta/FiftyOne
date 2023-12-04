@@ -15,6 +15,8 @@ import truck from "../../assets/About/truck.svg";
 import headphone from "../../assets/About/headphone.svg";
 import pack from "../../assets/About/pack.svg";
 import bag from "../../assets/About/bag.svg";
+import cara2 from "../../assets/About/cara2.svg";
+import cara3 from "../../assets/About/cara3.svg";
 
 export const About = () => {
   return (
@@ -118,8 +120,8 @@ export const About = () => {
             <div className="flex ml-[230px] ">
               <div className=" flex mt-[100px] gap-32">
               <img src={cara1} />
-              <img src={cara1} />
-              <img src={cara1} />
+              <img src={cara2} />
+              <img src={cara3} />
               </div>
             </div>
             <div className="kalimat flex ml-[200px] gap-24">
@@ -141,7 +143,7 @@ export const About = () => {
               <div className="cara text-black flex justify-center items-center text-3xl font-bold ">Cara Berbelanja di ForEat</div>
             </div>
           </div>
-          <div className="rectangle bg-[#94AF9F] h-[110vh]">
+          <div className="rectangle bg-[#94AF9F] h-[100vh]">
             <div className="flex ml-[120px] gap-28">
               <div className="flex mt-[150px]">
                 <div className="m">
@@ -149,10 +151,10 @@ export const About = () => {
                 </div>
               </div>
               <div>
-                <h1 className="mt-32 w-[23vw] text-6xl font-semibold ">Kenapa</h1>
+                <h1 className="mt-12 w-[23vw] text-6xl font-semibold ">Kenapa</h1>
                 <h1 className="mt-4 w-[50vw] text-6xl font-semibold">Harus Melilih ForEat?</h1>
                 <p className=" mt-7 w-[40vw]">Apakah jadwal padat Anda membuat sulit untuk memperoleh sayuran segar dan bahan memasak berkualitas? Kami dari ForEat hadir untuk memberikan soluis! dengan platform daring kami, belanja sayuran segar dan bahan memasak berkualitas tinggi menjadi lebih mudah dari sebelumnya.</p>
-                <div className=" flex flex-col mt-3 mr-[500px] gap-6 rounded-lg">
+                <div className=" grid grid-cols-2 mt-5 mr-[200px] gap-6 rounded-lg">
                 <div className="rectangle flex bg-white h-[70px]">
                   <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
                     <img className="w-10 h-10 mt-[8px] ml-[8px]" src={daun} />
@@ -195,7 +197,7 @@ export const About = () => {
                   </div>
                   <div className="ml-3">
                     <h1 className="font-semibold text-base mt-2">100% Pembayarannya Aman</h1>
-                    
+
                   </div>
                 </div>
                 <div className="rectangle flex bg-white h-[70px]">

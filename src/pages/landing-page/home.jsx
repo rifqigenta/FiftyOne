@@ -5,7 +5,7 @@ import Footer from "../../components/footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faQuoteRight, faStar } from "@fortawesome/free-solid-svg-icons";
 
-export const Home = () => {
+ const Home = () => {
   return (
     <>
       <div className='bg-[#002c02]'>

@@ -5,6 +5,6 @@ import App from "./App";
 import { Dashboard } from "./pages/admin/dashboard";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Dashboard />
+    <App />
   </React.StrictMode>
 );
