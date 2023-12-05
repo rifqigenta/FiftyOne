@@ -112,8 +112,8 @@ export const About = () => {
               </div>
             </div>
             
-            <div className=' bg-white flex justify-center items-center w-[80vw] bottom-[75px] left-[10vw] absolute rounded-md p-4'>
-              <div className='TentangKami flex justify-center items-center text-3xl font-bold '>Tentang Kami</div>
+            <div className=' bg-white flex justify-center items-center w-[80vw] bottom-[38px] left-[10vw] absolute rounded-md p-4'>
+              <div className='TentangKami text-black flex justify-center items-center text-3xl font-bold '>Tentang Kami</div>
             </div>
           </div>
           <div className="rectangle bg-white h-[80vh] ">
@@ -124,7 +124,7 @@ export const About = () => {
               <img src={cara3} />
               </div>
             </div>
-            <div className="kalimat flex ml-[200px] gap-24">
+            <div className="kalimat flex ml-[200px] gap-24 text-black">
               <div className="mt-[50px] ">
                 <img src="" alt="" />
                 <h1 className="text-center">1.</h1>
@@ -139,7 +139,7 @@ export const About = () => {
                 <p className="cara3 w-[21vw] text-center">Setelah Anda menemukan item yang di inginkan, tambahkan item tersebut ke keranjang dan lanjutkan ke pembayaran.</p>
               </div>
             </div>
-            <div className="rectagle bg-[#7EB685] flex justify-center items-center w-[80vw] top-[1710px] left-[10vw] absolute rounded-md p-4 ">
+            <div className="rectagle bg-[#7EB685] flex justify-center items-center w-[80vw] top-[1630px] left-[10vw] absolute rounded-md p-4 ">
               <div className="cara text-black flex justify-center items-center text-3xl font-bold ">Cara Berbelanja di ForEat</div>
             </div>
           </div>
@@ -151,15 +151,15 @@ export const About = () => {
                 </div>
               </div>
               <div>
-                <h1 className="mt-12 w-[23vw] text-6xl font-semibold ">Kenapa</h1>
-                <h1 className="mt-4 w-[50vw] text-6xl font-semibold">Harus Melilih ForEat?</h1>
-                <p className=" mt-7 w-[40vw]">Apakah jadwal padat Anda membuat sulit untuk memperoleh sayuran segar dan bahan memasak berkualitas? Kami dari ForEat hadir untuk memberikan soluis! dengan platform daring kami, belanja sayuran segar dan bahan memasak berkualitas tinggi menjadi lebih mudah dari sebelumnya.</p>
+                <h1 className="mt-12 w-[23vw] text-6xl font-semibold text-black ">Kenapa</h1>
+                <h1 className="mt-4 w-[50vw] text-6xl font-semibold text-black">Harus Melilih ForEat?</h1>
+                <p className=" mt-7 w-[40vw] text-black">Apakah jadwal padat Anda membuat sulit untuk memperoleh sayuran segar dan bahan memasak berkualitas? Kami dari ForEat hadir untuk memberikan soluis! dengan platform daring kami, belanja sayuran segar dan bahan memasak berkualitas tinggi menjadi lebih mudah dari sebelumnya.</p>
                 <div className=" grid grid-cols-2 mt-5 mr-[200px] gap-6 rounded-lg">
                 <div className="rectangle flex bg-white h-[70px]">
                   <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
                     <img className="w-10 h-10 mt-[8px] ml-[8px]" src={daun} />
                   </div>
-                  <div className="ml-3">
+                  <div className="ml-3 text-black">
                     <h1 className="font-semibold text-base mt-2">100% Makanan Sehat</h1>
                     <p className="mt-2 text-xs">100% Makanan Sehat</p>
                   </div>
@@ -168,7 +168,7 @@ export const About = () => {
                   <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
                     <img className="w-10 h-10 mt-[10px] ml-[11px]" src={bintang} />
                   </div>
-                  <div className="ml-3">
+                  <div className="ml-3 text-black">
                     <h1 className="font-semibold text-base mt-2">Pelayanan Terbaik</h1>
                     <p className="mt-2 text-xs">Membuat Pelanggan Bahagia</p>
                   </div>
@@ -177,7 +177,7 @@ export const About = () => {
                   <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
                     <img className="w-10 h-10 mt-[11px] ml-[11px]" src={truck} />
                   </div>
-                  <div className="ml-3">
+                  <div className="ml-3 text-black">
                     <h1 className="font-semibold text-base mt-2">Gratis Ongkir</h1>
                     <p className="mt-2 text-xs">Bebas Ongkir & Diskon</p>
                   </div>
@@ -186,7 +186,7 @@ export const About = () => {
                   <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
                     <img className="w-10 h-10 mt-[11px] ml-[11px]" src={headphone} />
                   </div>
-                  <div className="ml-3">
+                  <div className="ml-3 text-black">
                     <h1 className="font-semibold text-base mt-2">Dukungan Layanan 24/7</h1>
                     <p className="mt-2 text-xs">Akses cepat ke kontak</p>
                   </div>
@@ -195,7 +195,7 @@ export const About = () => {
                   <div className="bg-[#E6F8E7] w-20 h-16 mt-[3px] rounded-full">
                     <img className="w-10 h-10 mt-[11px] ml-[11px]" src={bag} />
                   </div>
-                  <div className="ml-3">
+                  <div className="ml-3 text-black">
                     <h1 className="font-semibold text-base mt-2">100% Pembayarannya Aman</h1>
 
                   </div>
@@ -204,7 +204,7 @@ export const About = () => {
                   <div className="bg-[#E6F8E7] w-16 h-16 mt-[3px] rounded-full">
                     <img className="w-10 h-10 mt-[11px] ml-[11px]" src={pack} />
                   </div>
-                  <div className="ml-3">
+                  <div className="ml-3 text-black">
                     <h1 className="font-semibold text-base mt-2">100% Makanan Sehat</h1>
                     <p className="mt-2 text-xs">100% Mantap</p>
                   </div>

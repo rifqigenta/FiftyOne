@@ -13,7 +13,7 @@ const Login = () => {
               <span className='text-[#C6E3C7]'>Eat</span>
             </h1>
           </div>
-          <div className='flex flex-col mt-16 justify-center items-center'>
+          <div className='flex flex-col mt-10 justify-center items-center'>
             <h1 className='mr-72 text-black'>Alamat Email</h1>
             <input className='email bg-white border-[2px] border-black w-[400px] h-[48px] mt-2 p-4 rounded-[8px] ' for='Email' placeholder='Email' />
             <h1 className='mt-7 mr-[340px] text-black'>Sandi</h1>

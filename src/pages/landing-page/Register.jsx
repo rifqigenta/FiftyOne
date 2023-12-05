@@ -28,10 +28,10 @@ const Register = () => {
                 Buat Akun
               </button>
             </Link>
-            <fieldset className='border-t-[1px] mt-7 w-[23vw] border-[#999DA3'>
+            <fieldset className='border-t-[1px] mt-4 w-[23vw] border-[#999DA3'>
               <legend className=' text-center px-4 text-[#999DA3'>atau masuk dengan</legend>
             </fieldset>
-            <button class='flex w-[400px] mt-7 items-center bg-[#D9D9D9] text-[#4B5768] p-3 gap-3 rounded-[4px] hover:bg-[#498528] focus:outline-none focus:shadow-outline-blue' type='submit'>
+            <button class='flex w-[400px] mt-4 items-center bg-[#D9D9D9] text-[#4B5768] p-3 gap-3 rounded-[4px] hover:bg-[#498528] focus:outline-none focus:shadow-outline-blue' type='submit'>
               <img src={Google} className="ml-[60px]" />Lanjutkan dengan Google</button>
             <Link to="/Login">
             <div className='mt-6 hover:text-[#00B207] text-[#498528] font-semibold'>
