@@ -9,6 +9,8 @@ const headers = [
     kode: "Kode",
     namaBarang: "Nama Barang",
     stok: "Stok",
+    harga: "Harga",
+    jenis: "Jenis",
     gambar: "Gambar",
   },
 ];
@@ -18,6 +20,8 @@ const stockBumbu = [
     kode: "B001",
     nama: "Garam",
     stock: 200,
+    price: 2000,
+    type: "Bumbu",
     img: <img src='/admin-stock/exbuah1.svg' />,
   },
   {
@@ -25,6 +29,8 @@ const stockBumbu = [
     kode: "B002",
     nama: "Merica",
     stock: 200,
+    price: 2000,
+    type: "Bumbu",
     img: <img src='/admin-stock/exbuah2.svg' />,
   },
   {
@@ -32,6 +38,8 @@ const stockBumbu = [
     kode: "B003",
     nama: "Penyedap",
     stock: 200,
+    price: 2000,
+    type: "Bumbu",
     img: <img src='/admin-stock/exbuah3.svg' />,
   },
   {
@@ -39,6 +47,8 @@ const stockBumbu = [
     kode: "B004",
     nama: "Lada",
     stock: 200,
+    price: 2000,
+    type: "Bumbu",
     img: <img src='/admin-stock/exbuah4.svg' />,
   },
   {
@@ -46,6 +56,8 @@ const stockBumbu = [
     kode: "B005",
     nama: "Realme 6",
     stock: 200,
+    price: 2000,
+    type: "Bumbu",
     img: <img src='/admin-stock/exbuah5.svg' />,
   },
 ];
@@ -53,16 +65,20 @@ const stockBumbu = [
 const Bumbu = () => {
   const [rows, setRows] = useState(stockBumbu);
   const [header, setHeader] = useState(headers);
+  const [isOpen, setIsOpen] = useState(true);
+  const handlerOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
-      <div className='h-screen bg-white pl-[280px]'>
-        <AdminSidebar />
+      <div className={`h-screen bg-white ${isOpen ? "pl-[280px]" : "pl-20"}`}>
+        <AdminSidebar handlerOpen={handlerOpen} />
         <div className='flex'>
           <div className='px-8 py-12 w-full'>
             <div className='flex justify-between mb-8'>
               <h1 className='text-[24px] text-black font-bold'>Bumbu</h1>
-              <ModalTambahBarang />
+              <ModalTambahBarang title='Bumbu' />
             </div>
             <div className='overflow-x-auto'>
               <TableBuah data={rows} header={header} />

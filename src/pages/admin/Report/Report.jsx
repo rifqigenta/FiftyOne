@@ -92,11 +92,15 @@ const dataReport = [
 const Report = () => {
   const [rows, setRows] = useState(dataReport);
   const [header, setHeader] = useState(headers);
+  const [isOpen, setIsOpen] = useState(true);
+  const handlerOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
-      <div className='h-auto bg-white pl-[280px]'>
-        <AdminSidebar />
+      <div className={`h-screen bg-white ${isOpen ? "pl-[280px]" : "pl-20"}`}>
+        <AdminSidebar handlerOpen={handlerOpen} />
         <div className='flex'>
           <div className='px-8 py-12 w-full'>
             <div className='flex justify-between mb-8'>

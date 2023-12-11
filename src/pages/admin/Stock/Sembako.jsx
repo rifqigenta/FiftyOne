@@ -9,6 +9,8 @@ const headers = [
     kode: "Kode",
     namaBarang: "Nama Barang",
     stok: "Stok",
+    harga: "Harga",
+    jenis: "Jenis",
     gambar: "Gambar",
   },
 ];
@@ -18,6 +20,8 @@ const stockSembako = [
     kode: "S001",
     nama: "Beras",
     stock: 200,
+    price: 2000,
+    type: "Sembako",
     img: <img src='/admin-stock/exbuah1.svg' />,
   },
   {
@@ -25,6 +29,8 @@ const stockSembako = [
     kode: "S002",
     nama: "Beras Bulog",
     stock: 200,
+    price: 2000,
+    type: "Sembako",
     img: <img src='/admin-stock/exbuah2.svg' />,
   },
   {
@@ -32,6 +38,8 @@ const stockSembako = [
     kode: "S003",
     nama: "Beras Indoramet",
     stock: 200,
+    price: 2000,
+    type: "Sembako",
     img: <img src='/admin-stock/exbuah3.svg' />,
   },
   {
@@ -39,6 +47,8 @@ const stockSembako = [
     kode: "S004",
     nama: "Beras Alfaramet",
     stock: 200,
+    price: 2000,
+    type: "Sembako",
     img: <img src='/admin-stock/exbuah4.svg' />,
   },
   {
@@ -46,6 +56,8 @@ const stockSembako = [
     kode: "S005",
     nama: "Beras lingkaran K",
     stock: 200,
+    price: 2000,
+    type: "Sembako",
     img: <img src='/admin-stock/exbuah5.svg' />,
   },
 ];
@@ -53,16 +65,20 @@ const stockSembako = [
 const Sembako = () => {
   const [rows, setRows] = useState(stockSembako);
   const [header, setHeader] = useState(headers);
+  const [isOpen, setIsOpen] = useState(true);
+  const handlerOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
-      <div className='h-screen bg-white pl-[280px]'>
-        <AdminSidebar />
+      <div className={`h-screen bg-white ${isOpen ? "pl-[280px]" : "pl-20"}`}>
+        <AdminSidebar handlerOpen={handlerOpen} />
         <div className='flex'>
           <div className='px-8 py-12 w-full'>
             <div className='flex justify-between mb-8'>
               <h1 className='text-[24px] text-black font-bold'>Sembako</h1>
-              <ModalTambahBarang />
+              <ModalTambahBarang title='Sembako' />
             </div>
             <div className='overflow-x-auto'>
               <TableBuah data={rows} header={header} />

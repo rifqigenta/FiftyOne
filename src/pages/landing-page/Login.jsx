@@ -5,7 +5,7 @@ import Google from "../../assets/About/Google.svg";
 const Login = () => {
   return (
     <>
-      <div className='backgorund1 bg-white h-screen'>
+      <div className='backgorund1 bg-white min-h-screen pb-8'>
         <div>
           <div className='pt-16'>
             <h1 className='judulproduk text-center text-7xl font-extrabold'>
@@ -31,9 +31,9 @@ const Login = () => {
               <legend className=' text-center px-4 text-[#999DA3'>atau masuk dengan</legend>
             </fieldset>
             <button class='flex w-[400px] mt-7 items-center bg-[#D9D9D9] text-[#4B5768] p-3 gap-3 rounded-[4px] hover:bg-[#498528] focus:outline-none focus:shadow-outline-blue' type='submit'>
-              <img src={Google} className="ml-[60px]" /> Lanjutkan dengan Google
+              <img src={Google} className='ml-[60px]' /> Lanjutkan dengan Google
             </button>
-            <Link to="/register">
+            <Link to='/register'>
               <div className='mt-6 hover:text-[#00B207] text-[#498528] font-semibold'>
                 <a href='#'>Membuat Akun</a>
               </div>

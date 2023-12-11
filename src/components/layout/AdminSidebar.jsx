@@ -132,7 +132,10 @@ const Logout = ({ title }) => {
   );
 };
 
-const AdminSidebar = () => {
+const AdminSidebar = ({ handlerOpen }) => {
+  const handle = () => {
+    handlerOpen();
+  };
   const [menuState, setMenuState] = useState([
     {
       icon: <FontAwesomeIcon icon={faAppleWhole} />,
@@ -186,12 +189,12 @@ const AdminSidebar = () => {
     <>
       <SidebarContext.Provider value={{ expanded }}>
         <div
-          className={`w-[280px] h-screen overflow-y-scroll no-scrollbar bg-[#191919] left-0 py-10 px-10 fixed transition-opacity duration-500 
+          className={`w-[280px] min-h-screen overflow-y-scroll no-scrollbar bg-[#191919] left-0 fixed py-10 px-10 transition-opacity duration-500 
         ${expanded ? "" : "w-[75px] h-screen px-4"}`}
         >
           <div className='grid gap-y-4 text-white'>
             <img src='/beranda/ceweDiHome.svg' className={`h-[100px] rounded-full m-auto ${expanded ? "" : "h-[50px] rounded-full mx-0"}`} alt='' />
-            <h6 className={`text-[22px] m-auto mb-4 ${expanded ? "" : "hidden"}`}>Admin </h6>
+            <h6 className={`text-[22px] m-auto mb-4 ${expanded ? "" : "invisible"}`}>Admin </h6>
             <Link to='/admin/dashboard'>
               <Dashboard title='Dashboard' setMenuActive={setMenuActive} />
             </Link>
@@ -202,14 +205,22 @@ const AdminSidebar = () => {
             <Link to='/admin/report'>
               <Report title='Report' />
             </Link>
-            <button className={`m-auto w-[50px] h-[50px] btn bg-[#E7F4E8] rounded-full ${expanded ? "" : "w-[15px] mx-0"}`} onClick={() => setExpanded((curr) => !curr)}>
+            <button
+              className={`m-auto w-[50px] h-[50px] btn bg-[#E7F4E8] rounded-full ${expanded ? "" : "w-[15px] mx-0"}`}
+              onClick={() => {
+                setExpanded((curr) => !curr);
+                handle();
+              }}
+            >
               {expanded ? (
                 <FontAwesomeIcon icon={faChevronRight} className='text-[#008E06] text-[22px] ease-in' />
               ) : (
                 <FontAwesomeIcon icon={faChevronLeft} className='text-[#008E06] text-[15px] ease-out' />
               )}
             </button>
-            <Logout title='Logout' />
+            <Link to='/login'>
+              <Logout title='Logout' />
+            </Link>
           </div>
         </div>
       </SidebarContext.Provider>
