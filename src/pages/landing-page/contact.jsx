@@ -28,7 +28,7 @@ export const Contact = () => {
               </p>
             </div>
             <div className='Email flex flex-row justify-items-center p-6 ps-[50px]  rounded-md '>
-              <div className='flex flex-col p-3'>
+              <div className='flex flex-col p-3 text-black'>
                 <input className=' bg-[#7DBF80] p-3 text-sm py-4 w-[25vw] font-bold mt-7 mb-7 rounded-lg placeholder-black' for='Nama' placeholder='Nama' />
                 <input className=' bg-[#7DBF80] p-3 text-sm py-4 font-bold mb-7 rounded-lg placeholder-black' for='Email' placeholder='Email' />
                 <input className=' bg-[#7DBF80] p-3 text-sm py-20 font-bold mb-2 rounded-lg placeholder-black' for='Massage' placeholder='Tuliskan sesuatu...' />
