@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { ModalTambahBarang } from "../../../components/Modal/ModalTambahBarang";
 import AdminSidebar from "../../../components/layout/AdminSidebar";
@@ -9,93 +9,41 @@ import { faPrint } from "@fortawesome/free-solid-svg-icons";
 const headers = [
   {
     no: "No",
-    profit: "Total Penjualan (Profit)",
-    stok: "Total Penjualan (Stok)",
-    bulan: "Bulan",
-  },
-];
-const dataReport = [
-  {
-    id: 1,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Jan",
-  },
-  {
-    id: 2,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Feb",
-  },
-  {
-    id: 3,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Mar",
-  },
-  {
-    id: 4,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Apr",
-  },
-  {
-    id: 5,
-    profit: 2000000,
-    stok: 500,
-    bulan: "May",
-  },
-  {
-    id: 6,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Jun",
-  },
-  {
-    id: 7,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Jul",
-  },
-  {
-    id: 8,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Aug",
-  },
-  {
-    id: 9,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Sep",
-  },
-  {
-    id: 10,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Okt",
-  },
-  {
-    id: 11,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Nov",
-  },
-  {
-    id: 12,
-    profit: 2000000,
-    stok: 500,
-    bulan: "Dec",
+    waktu: "Waktu",
+    kode: "Kode Pesanan",
+    nama: "Nama Pengguna",
+    total: "Total Pesanan (Rp)",
   },
 ];
 
 const Report = () => {
-  const [rows, setRows] = useState(dataReport);
+  const [rows, setRows] = useState([]);
   const [header, setHeader] = useState(headers);
   const [isOpen, setIsOpen] = useState(true);
   const handlerOpen = () => {
     setIsOpen(!isOpen);
   };
+
+  const getData = () => {
+    fetch("/reports/", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const dataReport = data.map((item) => ({
+          id: item.id,
+          time: item.createdAt,
+          code: item.code_trans,
+          name: item.name,
+          total: item.tot_price,
+        }));
+        setRows(dataReport);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
@@ -105,8 +53,6 @@ const Report = () => {
           <div className='px-8 py-12 w-full'>
             <div className='flex justify-between mb-8'>
               <h1 className='text-[24px] text-black font-bold'>Report</h1>
-              {/* <ModalTambahBarang /> */}
-              <input type='date' className='text-[15px] py-0 bg-transparent border border-black pl-2' />
             </div>
             <div className='overflow-x-auto'>
               <TableReport data={rows} header={header} />

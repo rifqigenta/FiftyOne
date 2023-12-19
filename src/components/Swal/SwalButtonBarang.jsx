@@ -1,17 +1,15 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import SweetAlert2 from "react-sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-
-const SwalButtonDelete = ({ id, deleteData }) => {
+const SwalButtonBarang = ({ id, deleteData }) => {
   const [swalProps, setSwalProps] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     setSwalProps({
       show: true,
       icon: "warning",
-      title: "Yakin ingin menghapus data User ?",
+      title: "Yakin ingin menghapus data Barang ?",
       text: "",
       confirmButtonText: "Ya, Hapus!",
       showCancelButton: true,
@@ -32,4 +30,4 @@ const SwalButtonDelete = ({ id, deleteData }) => {
   );
 };
 
-export default SwalButtonDelete;
+export default SwalButtonBarang;

@@ -1,13 +1,13 @@
 import React from "react";
 
 const RowHeader = (val) => {
-  const { no, kode, email, tanggalBergabung, aksi } = val;
+  const { no, email, nama, tanggalBergabung, aksi } = val;
   return (
     <>
       <tr>
         <th>{no}</th>
-        <th>{kode}</th>
         <th>{email}</th>
+        <th>{nama}</th>
         <th>{tanggalBergabung}</th>
         <th className='px-8'>{aksi}</th>
       </tr>
@@ -16,13 +16,13 @@ const RowHeader = (val) => {
 };
 
 const RowData = (val) => {
-  const { id, kode, email, join, button } = val;
+  const { id, email, name, join, button } = val;
   return (
     <>
       <tr className='text-black hover:bg-[#00b207] hover:bg-opacity-50'>
         <td>{id}</td>
-        <td>{kode}</td>
         <td>{email}</td>
+        <td>{name}</td>
         <td>{join}</td>
         <td>{button}</td>
       </tr>
@@ -39,13 +39,13 @@ const TableUser = (val) => {
         <thead className='bg-[#00b207] text-white'>
           {/* <tr> */}
           {header.map((rowHeader) => (
-            <RowHeader no={rowHeader.no} kode={rowHeader.kode} email={rowHeader.email} tanggalBergabung={rowHeader.tanggalBergabung} aksi={rowHeader.aksi} />
+            <RowHeader no={rowHeader.no} email={rowHeader.email} nama={rowHeader.nama} tanggalBergabung={rowHeader.tanggalBergabung} aksi={rowHeader.aksi} />
           ))}
           {/* </tr> */}
         </thead>
         <tbody>
           {data.map((rowData) => (
-            <RowData id={rowData.id} kode={rowData.kode} email={rowData.email} join={rowData.join} button={rowData.button} />
+            <RowData id={rowData.id} email={rowData.email} name={rowData.name} join={rowData.join} button={rowData.button} />
           ))}
         </tbody>
       </table>

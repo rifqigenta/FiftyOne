@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { ModalTambahBarang } from "../../../components/Modal/ModalTambahBarang";
 import AdminSidebar from "../../../components/layout/AdminSidebar";
@@ -6,12 +6,6 @@ import TableUser from "../../../components/Table/TableUser";
 import SwalButtonDelete from "../../../components/Swal/SwalButtonDelete";
 
 const GetDate = () => {
-  //   const today = new Date();
-  //   const month = today.getMonth() + 1;
-  //   const year = today.getFullYear();
-  //   const date = today.getDate();
-  //   const time = today.getTime();
-  //   const [currentDate, setCurrentDate] = useState(getDate());
   let tempDate = new Date();
   let date = tempDate.getFullYear() + "-" + (tempDate.getMonth() + 1) + "-" + tempDate.getDate() + " " + tempDate.getHours() + ":" + tempDate.getMinutes() + ":" + tempDate.getSeconds();
   const currDate = date;
@@ -25,58 +19,57 @@ const GetDate = () => {
 const headers = [
   {
     no: "No",
-    kode: "Kode",
     email: "Email",
+    nama: "Nama Pengguna",
     tanggalBergabung: "Tanggal Bergabung",
-    aksi: "aksi",
-    // gambar: "Gambar",
+    aksi: "Aksi",
   },
 ];
-const dataUser = [
-  {
-    id: 1,
-    kode: "U001",
-    email: "exampleemail@gmail.com",
-    join: <GetDate />,
-    button: <SwalButtonDelete />,
-  },
-  {
-    id: 2,
-    kode: "U001",
-    email: "exampleemail@gmail.com",
-    join: <GetDate />,
-    button: <SwalButtonDelete />,
-  },
-  {
-    id: 3,
-    kode: "U001",
-    email: "exampleemail@gmail.com",
-    join: <GetDate />,
-    button: <SwalButtonDelete />,
-  },
-  {
-    id: 4,
-    kode: "U001",
-    email: "exampleemail@gmail.com",
-    join: <GetDate />,
-    button: <SwalButtonDelete />,
-  },
-  {
-    id: 5,
-    kode: "U001",
-    email: "exampleemail@gmail.com",
-    join: <GetDate />,
-    button: <SwalButtonDelete />,
-  },
-];
-
+// const dataUser = [
+//   {
+//     id: 1,
+//     email: "exampleemail@gmail.com",
+//     join: <GetDate />,
+//     button:
+//   },
+// ];
 const UserAccount = () => {
-  const [rows, setRows] = useState(dataUser);
+  const [rows, setRows] = useState([]);
   const [header, setHeader] = useState(headers);
   const [isOpen, setIsOpen] = useState(true);
   const handlerOpen = () => {
     setIsOpen(!isOpen);
   };
+
+  const getData = () => {
+    fetch("/users/", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const dataUser = data.map((item) => ({
+          id: item.id,
+          email: item.email,
+          name: item.name,
+          join: item.createdAt,
+          button: <SwalButtonDelete id={item.id} deleteData={deleteData} />,
+        }));
+        setRows(dataUser);
+      });
+  };
+
+  const deleteData = (id) => {
+    fetch(`/users/${id}`, {
+      method: "DELETE",
+    })
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>

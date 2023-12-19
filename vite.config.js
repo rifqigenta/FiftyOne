@@ -11,6 +11,21 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
+      "/reports": {
+        target: "http://localhost:4000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/users": {
+        target: "http://localhost:4000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/auth": {
+        target: "http://localhost:4000",
+        changeOrigin: true,
+        secure: false,
+      },
       // "/uploads/products": {
       //   target: "http://localhost:4000",
       //   changeOrigin: true,

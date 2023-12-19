@@ -1,28 +1,30 @@
 import React from "react";
 
 const RowHeader = (val) => {
-  const { no, profit, stok, bulan } = val;
+  const { no, waktu, kode, nama, total } = val;
   return (
     <>
       <tr>
         <th>{no}</th>
-        <th>{profit}</th>
-        <th>{stok}</th>
-        <th>{bulan}</th>
+        <th>{waktu}</th>
+        <th>{kode}</th>
+        <th>{nama}</th>
+        <th>{total}</th>
       </tr>
     </>
   );
 };
 
 const RowData = (val) => {
-  const { id, profit, stok, bulan } = val;
+  const { id, time, code, name, total } = val;
   return (
     <>
       <tr className='text-black hover:bg-[#00b207] hover:bg-opacity-50'>
         <td>{id}</td>
-        <td>{profit}</td>
-        <td>{stok}</td>
-        <td>{bulan}</td>
+        <td>{time}</td>
+        <td>{code}</td>
+        <td>{name}</td>
+        <td>{total}</td>
       </tr>
     </>
   );
@@ -37,13 +39,13 @@ const TableReport = (val) => {
         <thead className='bg-[#00b207] text-white'>
           {/* <tr> */}
           {header.map((rowHeader) => (
-            <RowHeader no={rowHeader.no} profit={rowHeader.profit} stok={rowHeader.stok} bulan={rowHeader.bulan} />
+            <RowHeader no={rowHeader.no} waktu={rowHeader.waktu} kode={rowHeader.kode} nama={rowHeader.nama} total={rowHeader.total} />
           ))}
           {/* </tr> */}
         </thead>
         <tbody>
           {data.map((rowData) => (
-            <RowData id={rowData.id} profit={rowData.profit} stok={rowData.stok} bulan={rowData.bulan} />
+            <RowData id={rowData.id} time={rowData.time} code={rowData.code} name={rowData.name} total={rowData.total} />
           ))}
         </tbody>
       </table>

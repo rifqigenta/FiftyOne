@@ -3,6 +3,8 @@ import { useState } from "react";
 import { ModalTambahBarang } from "../../../components/Modal/ModalTambahBarang";
 import AdminSidebar from "../../../components/layout/AdminSidebar";
 import TableBuah from "../../../components/Table/TableBuah";
+import ModalEditBarang from "../../../components/Modal/ModalEditBarang";
+import SwalButtonBarang from "../../../components/Swal/SwalButtonBarang";
 const headers = [
   {
     no: "No",
@@ -10,57 +12,11 @@ const headers = [
     namaBarang: "Nama Barang",
     stok: "Stok",
     harga: "Harga",
-    // jenis: "Jenis",
+    jenis: "Jenis",
     gambar: "Gambar",
+    aksi: "Aksi",
   },
 ];
-// const stockSayuran = [
-//   {
-//     id: 1,
-//     kode: "V001",
-//     nama: "Bayam",
-//     stock: 200,
-//     price: 2000,
-//     type: "Sayuran",
-//     img: <img src='/admin-stock/exbuah1.svg' />,
-//   },
-//   {
-//     id: 2,
-//     kode: "V002",
-//     nama: "Kangkung",
-//     stock: 200,
-//     price: 2000,
-//     type: "Sayuran",
-//     img: <img src='/admin-stock/exbuah2.svg' />,
-//   },
-//   {
-//     id: 3,
-//     kode: "V003",
-//     nama: "Brokoli",
-//     stock: 200,
-//     price: 2000,
-//     type: "Sayuran",
-//     img: <img src='/admin-stock/exbuah3.svg' />,
-//   },
-//   {
-//     id: 4,
-//     kode: "V004",
-//     nama: "Genjer",
-//     stock: 200,
-//     price: 2000,
-//     type: "Sayuran",
-//     img: <img src='/admin-stock/exbuah4.svg' />,
-//   },
-//   {
-//     id: 5,
-//     kode: "V005",
-//     nama: "Sawi",
-//     stock: 200,
-//     price: 2000,
-//     type: "Sayuran",
-//     img: <img src='/admin-stock/exbuah5.svg' />,
-//   },
-// ];
 
 const Sayuran = () => {
   const [header, setHeader] = useState(headers);
@@ -69,8 +25,9 @@ const Sayuran = () => {
     setIsOpen(!isOpen);
   };
   const [rows, setRows] = useState([]);
+  let jenis = "sayur";
   const getData = () => {
-    fetch("/products/product-sayuran")
+    fetch(`/products/jenis/${jenis}`)
       .then((res) => res.json())
       .then((data) => {
         const stockSayuran = data.map((item) => ({
@@ -79,11 +36,27 @@ const Sayuran = () => {
           nama: item.product_name,
           stock: item.stok,
           price: item.harga,
-          // img: <img src={item.gambar} />,
+          type: item.jenis,
           img: <img className='max-w-[105px]' src={`http://localhost:4000/uploads/${item.gambar}`} />,
+          edit: (
+            <div className='flex'>
+              <ModalEditBarang title='Sayuran' id={item.id} getData={getData} />
+              <SwalButtonBarang id={item.id} deleteData={deleteData} />
+            </div>
+          ),
         }));
         setRows(stockSayuran);
       });
+  };
+
+  const deleteData = (id) => {
+    fetch(`/products/${id}`, {
+      method: "DELETE",
+    })
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log(err));
   };
   useEffect(() => {
     getData();

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Google from "../../assets/About/Google.svg";
 
 const Login = () => {
+  const handleLogin = () => {};
+
   return (
     <>
       <div className='backgorund1 bg-white min-h-screen pb-8'>

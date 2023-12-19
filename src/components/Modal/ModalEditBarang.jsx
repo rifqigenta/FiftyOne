@@ -1,13 +1,13 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faPencil } from "@fortawesome/free-solid-svg-icons";
 
-export const ModalTambahBarang = ({ title, getData }) => {
+const ModalEditBarang = ({ title, getData, id }) => {
   const [productName, setProductName] = useState("");
   const [stok, setStok] = useState("");
   const [harga, setHarga] = useState("");
-  const [jenis, setJenis] = useState("");
   const [gambar, setGambar] = useState(null);
+  const [jenis, setJenis] = useState("");
 
   const formData = new FormData();
 
@@ -25,36 +25,33 @@ export const ModalTambahBarang = ({ title, getData }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     // Handle Useref >> FormData
     formData.append("product_name", productName);
     formData.append("stok", stok);
     formData.append("harga", harga);
-    formData.append("jenis", jenis);
     formData.append("gambar", gambar);
-
-    fetch("/products/", {
-      method: "post",
+    formData.append("jenis", jenis);
+    // let id = this.id;
+    fetch(`/products/${id}`, {
+      method: "put",
       body: formData,
-      // headers: {},
     })
-      .then((res) => res.json())
       .then(() => {
         closeModal();
-        getData();
-      });
+      })
+      .catch((err) => console.log(err));
   };
-
   return (
     <>
-      <button className='text-[24px] text-black font-bold' onClick={() => document.getElementById("my_modal_1").showModal()}>
+      <button className='text-[14px] text-black font-bold hover:bg-orange-500  rounded-lg px-3 py-1' onClick={() => document.getElementById("my_modal_2").showModal()}>
         <span>
-          <FontAwesomeIcon icon={faPlusCircle} className='me-2' /> Tambah Barang
+          <FontAwesomeIcon icon={faPencil} className='me-2' />
+          Edit
         </span>
       </button>
-      <dialog id='my_modal_1' className='modal'>
-        <div className='modal-box'>
-          <h3 className='font-bold text-2xl text-start mb-8'>Tambah {title}</h3>
+      <dialog id='my_modal_2' className='modal'>
+        <div className='modal-box text-gray-400'>
+          <h3 className='font-bold text-2xl text-start mb-8'>Edit {title}</h3>
           <form onSubmit={handleSubmit} className='grid gap-y-4'>
             <div className='grid'>
               <label htmlFor='nama-barang'>Nama Barang</label>
@@ -70,13 +67,14 @@ export const ModalTambahBarang = ({ title, getData }) => {
             </div>
             <div className='grid'>
               <label htmlFor='type'>Jenis</label>
-              <select name='type' className='p-2 mt-1 rounded-[10px]' onChange={(e) => setJenis(e.target.value)} id='type'>
+              {/* <input type='text' name='stok' /> */}
+              <select name='type' className='p-2 mt-1 rounded-[10px]' id='type' onChange={(e) => setJenis(e.target.value)}>
                 <option value='' hidden></option>
                 <option value='buah'>Buah</option>
                 <option value='bumbu'>Bumbu</option>
                 <option value='daging'>Daging</option>
                 <option value='susu'>Produk Susu</option>
-                <option value='sayur'>Sayuran</option>
+                <option value='sayuran'>Sayuran</option>
                 <option value='sembako'>Sembako</option>
                 <option value='3t'>3 T</option>
                 <option value='lain-lain'>Lain - lain</option>
@@ -102,3 +100,5 @@ export const ModalTambahBarang = ({ title, getData }) => {
     </>
   );
 };
+
+export default ModalEditBarang;
