@@ -43,7 +43,8 @@ const MenuCollapse = ({ menus, title, setMenuActive }) => {
                         className={`${menuActive}grid gap-y-4 menu cursor-pointer`}
                         onClick={(e) => {
                           e.stopPropagation();
-                          setMenuActive(index);
+                          // e.preventDefault();
+                          // setMenuActive(index);
                         }}
                       >
                         <div className={`${menuActive}flex py-0`}>

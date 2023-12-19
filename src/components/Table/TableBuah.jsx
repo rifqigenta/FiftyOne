@@ -10,7 +10,7 @@ const RowHeader = (val) => {
         <th>{namaBarang}</th>
         <th>{stok}</th>
         <th>{harga}</th>
-        <th>{jenis}</th>
+        {/* <th>{jenis}</th> */}
         <th>{gambar}</th>
       </tr>
     </>
@@ -27,7 +27,7 @@ const RowData = (val) => {
         <td>{nama}</td>
         <td>{stock}</td>
         <td>{price}</td>
-        <td>{type}</td>
+        {/* <td>{type}</td> */}
         <td>{img}</td>
       </tr>
     </>
