@@ -11,8 +11,10 @@ export const ModalTambahBarang = ({ title, getData }) => {
 
   const formData = new FormData();
 
-  const handleNumChange = (e) => {
+  const handleHargaChange = (e) => {
     setHarga(parseInt(e.target.value, 10));
+  };
+  const handleStokChange = (e) => {
     setStok(parseInt(e.target.value, 10));
   };
   const handleFileChange = (e) => {
@@ -62,11 +64,11 @@ export const ModalTambahBarang = ({ title, getData }) => {
             </div>
             <div className='grid'>
               <label htmlFor='harga'>Harga</label>
-              <input type='number' onChange={handleNumChange} className='p-2 mt-1 rounded-[10px]' name='harga' />
+              <input type='number' onChange={handleHargaChange} className='p-2 mt-1 rounded-[10px]' name='harga' />
             </div>
             <div className='grid'>
               <label htmlFor='stok'>Stok</label>
-              <input type='number' onChange={handleNumChange} className='p-2 mt-1 rounded-[10px]' name='stok' />
+              <input type='number' onChange={handleStokChange} className='p-2 mt-1 rounded-[10px]' name='stok' />
             </div>
             <div className='grid'>
               <label htmlFor='type'>Jenis</label>

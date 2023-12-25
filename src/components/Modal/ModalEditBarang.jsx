@@ -11,8 +11,10 @@ const ModalEditBarang = ({ title, getData, id }) => {
 
   const formData = new FormData();
 
-  const handleNumChange = (e) => {
+  const handleHargaChange = (e) => {
     setHarga(parseInt(e.target.value, 10));
+  };
+  const handleStokChange = (e) => {
     setStok(parseInt(e.target.value, 10));
   };
   const handleFileChange = (e) => {
@@ -20,26 +22,30 @@ const ModalEditBarang = ({ title, getData, id }) => {
   };
 
   const closeModal = () => {
-    document.getElementById("my_modal_1").close();
+    document.getElementById("my_modal_2").close();
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle Useref >> FormData
+  const editProduct = () => {
     formData.append("product_name", productName);
     formData.append("stok", stok);
     formData.append("harga", harga);
     formData.append("gambar", gambar);
     formData.append("jenis", jenis);
-    // let id = this.id;
     fetch(`/products/${id}`, {
       method: "put",
       body: formData,
     })
       .then(() => {
         closeModal();
+        getData();
       })
       .catch((err) => console.log(err));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    editProduct();
+    event.target.reset();
   };
   return (
     <>
@@ -54,21 +60,21 @@ const ModalEditBarang = ({ title, getData, id }) => {
           <h3 className='font-bold text-2xl text-start mb-8'>Edit {title}</h3>
           <form onSubmit={handleSubmit} className='grid gap-y-4'>
             <div className='grid'>
-              <label htmlFor='nama-barang'>Nama Barang</label>
-              <input type='text' onChange={(e) => setProductName(e.target.value)} className='p-2 mt-1 rounded-[10px]' name='nama-barang' />
+              <label htmlFor='product_name'>Nama Barang</label>
+              <input type='text' onChange={(e) => setProductName(e.target.value)} className='p-2 mt-1 rounded-[10px]' name='product_name' />
             </div>
             <div className='grid'>
               <label htmlFor='harga'>Harga</label>
-              <input type='number' onChange={handleNumChange} className='p-2 mt-1 rounded-[10px]' name='harga' />
+              <input type='number' onChange={handleHargaChange} className='p-2 mt-1 rounded-[10px]' name='harga' />
             </div>
             <div className='grid'>
               <label htmlFor='stok'>Stok</label>
-              <input type='number' onChange={handleNumChange} className='p-2 mt-1 rounded-[10px]' name='stok' />
+              <input type='number' onChange={handleStokChange} className='p-2 mt-1 rounded-[10px]' name='stok' />
             </div>
             <div className='grid'>
-              <label htmlFor='type'>Jenis</label>
+              <label htmlFor='jenis'>Jenis</label>
               {/* <input type='text' name='stok' /> */}
-              <select name='type' className='p-2 mt-1 rounded-[10px]' id='type' onChange={(e) => setJenis(e.target.value)}>
+              <select name='jenis' className='p-2 mt-1 rounded-[10px]' id='type' onChange={(e) => setJenis(e.target.value)}>
                 <option value='' hidden></option>
                 <option value='buah'>Buah</option>
                 <option value='bumbu'>Bumbu</option>

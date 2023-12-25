@@ -4,12 +4,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 const SwalButtonBarang = ({ id, deleteData }) => {
   const [swalProps, setSwalProps] = useState(false);
+  const [namaProduct, setNamaProduct] = useState("");
+
+  fetch(`/products/${id}`, {
+    method: "get",
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      setNamaProduct(data.product_name);
+    });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSwalProps({
       show: true,
       icon: "warning",
-      title: "Yakin ingin menghapus data Barang ?",
+      title: `Yakin ingin menghapus data ${namaProduct} ?`,
       text: "",
       confirmButtonText: "Ya, Hapus!",
       showCancelButton: true,

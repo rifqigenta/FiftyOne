@@ -39,8 +39,8 @@ const Buah = () => {
           type: item.jenis,
           img: <img className='max-w-[105px]' src={`http://localhost:4000/uploads/${item.gambar}`} />,
           edit: (
-            <div className='flex'>
-              <ModalEditBarang title='Buah' />
+            <div className='flex gap-2'>
+              <ModalEditBarang title='Buah' id={item.id} getData={getData} />
               <SwalButtonBarang id={item.id} deleteData={deleteData} />
             </div>
           ),
@@ -65,7 +65,7 @@ const Buah = () => {
   console.log(rows);
   return (
     <>
-      <div className={`h-screen bg-white ${isOpen ? "pl-[280px]" : "pl-20"}`}>
+      <div className={`min-h-screen bg-white ${isOpen ? "pl-[280px]" : "pl-20"}`}>
         <AdminSidebar handlerOpen={handlerOpen} />
         <div className='flex'>
           <div className='px-8 py-12 w-full'>

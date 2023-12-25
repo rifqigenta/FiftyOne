@@ -14,6 +14,7 @@ const headers = [
     harga: "Harga",
     jenis: "Jenis",
     gambar: "Gambar",
+    aksi: "Aksi",
   },
 ];
 
