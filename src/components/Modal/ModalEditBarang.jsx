@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,7 +28,7 @@ const ModalEditBarang = ({ title, getData, id }) => {
   const handleClickModal = () => {
     document.getElementById(`my_modal_2${id}`).showModal();
     fetch(`/products/${id}`, {
-      method: "get",
+      method: "GET",
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
@@ -41,10 +41,7 @@ const ModalEditBarang = ({ title, getData, id }) => {
     editFormData.append("gambar", gambar);
     editFormData.append("jenis", jenis);
     fetch(`/products/${id}`, {
-      method: "put",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
+      method: "PUT",
       body: editFormData,
     })
       .then(() => {
@@ -59,7 +56,6 @@ const ModalEditBarang = ({ title, getData, id }) => {
     editProduct(id);
     event.target.reset();
   };
-  console.log(id);
 
   return (
     <>
@@ -71,7 +67,7 @@ const ModalEditBarang = ({ title, getData, id }) => {
       </button>
       <dialog id={`my_modal_2${id}`} className='modal'>
         <div className='modal-box text-gray-400'>
-          <h3 className='font-bold text-2xl text-start mb-8'>Edit {id}</h3>
+          <h3 className='font-bold text-2xl text-start mb-8'>Edit {title}</h3>
           <form onSubmit={handleSubmitEdit} className='grid gap-y-4'>
             <div className='grid'>
               <label htmlFor='product_name'>Nama Barang</label>

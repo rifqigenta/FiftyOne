@@ -43,8 +43,6 @@ const MenuCollapse = ({ menus, title, setMenuActive }) => {
                         className={`${menuActive}grid gap-y-4 menu cursor-pointer`}
                         onClick={(e) => {
                           e.stopPropagation();
-                          // e.preventDefault();
-                          // setMenuActive(index);
                         }}
                       >
                         <div className={`${menuActive}flex py-0`}>
@@ -195,7 +193,7 @@ const AdminSidebar = ({ handlerOpen }) => {
         >
           <div className='grid gap-y-4 text-white'>
             <img src='/beranda/ceweDiHome.svg' className={`h-[100px] rounded-full m-auto ${expanded ? "" : "h-[50px] rounded-full mx-0"}`} alt='' />
-            <h6 className={`text-[22px] m-auto mb-4 ${expanded ? "" : "invisible"}`}>Admin </h6>
+            <h6 className={`text-[22px] m-auto mb-4 ${expanded ? "" : "invisible"}`}>Admin</h6>
             <Link to='/admin/dashboard'>
               <Dashboard title='Dashboard' setMenuActive={setMenuActive} />
             </Link>

@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
-export const ModalTambahBarang = ({ title, getData }) => {
+const ModalTambahBarang = ({ title, getData }) => {
   const [productName, setProductName] = useState("");
   const [stok, setStok] = useState("");
   const [harga, setHarga] = useState("");
@@ -27,8 +27,6 @@ export const ModalTambahBarang = ({ title, getData }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // Handle Useref >> FormData
     formData.append("product_name", productName);
     formData.append("stok", stok);
     formData.append("harga", harga);
@@ -38,7 +36,6 @@ export const ModalTambahBarang = ({ title, getData }) => {
     fetch("/products/", {
       method: "post",
       body: formData,
-      // headers: {},
     })
       .then((res) => res.json())
       .then(() => {
@@ -104,3 +101,5 @@ export const ModalTambahBarang = ({ title, getData }) => {
     </>
   );
 };
+
+export default ModalTambahBarang;

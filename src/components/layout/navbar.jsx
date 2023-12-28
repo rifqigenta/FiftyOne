@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import Navigation from "react-sticky-nav";
-// import { Navigation } from "react-sticky-nav";
-// import LogoNavbar from "../../assets/logo.svg";
 export const Navbar = () => {
   return (
     <>

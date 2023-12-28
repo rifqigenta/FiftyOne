@@ -35,13 +35,10 @@ const TableReport = (val) => {
   return (
     <>
       <table className='table'>
-        {/* head */}
         <thead className='bg-[#00b207] text-white'>
-          {/* <tr> */}
           {header.map((rowHeader) => (
             <RowHeader no={rowHeader.no} waktu={rowHeader.waktu} kode={rowHeader.kode} nama={rowHeader.nama} total={rowHeader.total} />
           ))}
-          {/* </tr> */}
         </thead>
         <tbody>
           {data.map((rowData) => (

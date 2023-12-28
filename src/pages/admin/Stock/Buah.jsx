@@ -30,7 +30,7 @@ const Buah = () => {
     fetch(`/products/jenis/${jenis}`)
       .then((res) => res.json())
       .then((data) => {
-        const stockBuah = data.map((item, i) => ({
+        const stockBuah = data.map((item) => ({
           id: item.id,
           kode: item.product_id,
           nama: item.product_name,
@@ -60,7 +60,6 @@ const Buah = () => {
   };
   useEffect(() => {
     getData();
-    // console.log(rows)
   }, []);
 
   console.log(rows);

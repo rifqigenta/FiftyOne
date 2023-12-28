@@ -35,13 +35,10 @@ const TableUser = (val) => {
   return (
     <>
       <table className='table'>
-        {/* head */}
         <thead className='bg-[#00b207] text-white'>
-          {/* <tr> */}
           {header.map((rowHeader) => (
             <RowHeader no={rowHeader.no} email={rowHeader.email} nama={rowHeader.nama} tanggalBergabung={rowHeader.tanggalBergabung} aksi={rowHeader.aksi} />
           ))}
-          {/* </tr> */}
         </thead>
         <tbody>
           {data.map((rowData) => (
