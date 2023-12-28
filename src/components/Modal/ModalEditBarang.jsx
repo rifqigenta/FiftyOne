@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,7 +9,7 @@ const ModalEditBarang = ({ title, getData, id }) => {
   const [gambar, setGambar] = useState(null);
   const [jenis, setJenis] = useState("");
 
-  const formData = new FormData();
+  const editFormData = new FormData();
 
   const handleHargaChange = (e) => {
     setHarga(parseInt(e.target.value, 10));
@@ -22,18 +22,30 @@ const ModalEditBarang = ({ title, getData, id }) => {
   };
 
   const closeModal = () => {
-    document.getElementById("my_modal_2").close();
+    document.getElementById(`my_modal_2${id}`).close();
   };
 
-  const editProduct = () => {
-    formData.append("product_name", productName);
-    formData.append("stok", stok);
-    formData.append("harga", harga);
-    formData.append("gambar", gambar);
-    formData.append("jenis", jenis);
+  const handleClickModal = () => {
+    document.getElementById(`my_modal_2${id}`).showModal();
+    fetch(`/products/${id}`, {
+      method: "get",
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
+  const editProduct = (id) => {
+    editFormData.append("product_name", productName);
+    editFormData.append("stok", stok);
+    editFormData.append("harga", harga);
+    editFormData.append("gambar", gambar);
+    editFormData.append("jenis", jenis);
     fetch(`/products/${id}`, {
       method: "put",
-      body: formData,
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
+      body: editFormData,
     })
       .then(() => {
         closeModal();
@@ -42,23 +54,25 @@ const ModalEditBarang = ({ title, getData, id }) => {
       .catch((err) => console.log(err));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmitEdit = (event) => {
     event.preventDefault();
-    editProduct();
+    editProduct(id);
     event.target.reset();
   };
+  console.log(id);
+
   return (
     <>
-      <button className='text-[14px] text-black font-bold hover:bg-orange-500  rounded-lg px-3 py-1' onClick={() => document.getElementById("my_modal_2").showModal()}>
+      <button className='text-[14px] text-black font-bold hover:bg-orange-500  rounded-lg px-3 py-1' onClick={handleClickModal}>
         <span>
           <FontAwesomeIcon icon={faPencil} className='me-2' />
           Edit
         </span>
       </button>
-      <dialog id='my_modal_2' className='modal'>
+      <dialog id={`my_modal_2${id}`} className='modal'>
         <div className='modal-box text-gray-400'>
-          <h3 className='font-bold text-2xl text-start mb-8'>Edit {title}</h3>
-          <form onSubmit={handleSubmit} className='grid gap-y-4'>
+          <h3 className='font-bold text-2xl text-start mb-8'>Edit {id}</h3>
+          <form onSubmit={handleSubmitEdit} className='grid gap-y-4'>
             <div className='grid'>
               <label htmlFor='product_name'>Nama Barang</label>
               <input type='text' onChange={(e) => setProductName(e.target.value)} className='p-2 mt-1 rounded-[10px]' name='product_name' />
@@ -73,8 +87,7 @@ const ModalEditBarang = ({ title, getData, id }) => {
             </div>
             <div className='grid'>
               <label htmlFor='jenis'>Jenis</label>
-              {/* <input type='text' name='stok' /> */}
-              <select name='jenis' className='p-2 mt-1 rounded-[10px]' id='type' onChange={(e) => setJenis(e.target.value)}>
+              <select name='jenis' className='p-2 mt-1 rounded-[10px]' id='jenis' onChange={(e) => setJenis(e.target.value)}>
                 <option value='' hidden></option>
                 <option value='buah'>Buah</option>
                 <option value='bumbu'>Bumbu</option>

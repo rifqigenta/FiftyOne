@@ -59,20 +59,20 @@ export const ModalTambahBarang = ({ title, getData }) => {
           <h3 className='font-bold text-2xl text-start mb-8'>Tambah {title}</h3>
           <form onSubmit={handleSubmit} className='grid gap-y-4'>
             <div className='grid'>
-              <label htmlFor='nama-barang'>Nama Barang</label>
-              <input type='text' onChange={(e) => setProductName(e.target.value)} className='p-2 mt-1 rounded-[10px]' name='nama-barang' />
+              <label htmlFor='product_name'>Nama Barang</label>
+              <input type='text' onChange={(e) => setProductName(e.target.value)} className='p-2 mt-1 rounded-[10px]' name='product_name' id='product_name' />
             </div>
             <div className='grid'>
               <label htmlFor='harga'>Harga</label>
-              <input type='number' onChange={handleHargaChange} className='p-2 mt-1 rounded-[10px]' name='harga' />
+              <input type='number' onChange={handleHargaChange} className='p-2 mt-1 rounded-[10px]' name='harga' id='harga' />
             </div>
             <div className='grid'>
               <label htmlFor='stok'>Stok</label>
-              <input type='number' onChange={handleStokChange} className='p-2 mt-1 rounded-[10px]' name='stok' />
+              <input type='number' onChange={handleStokChange} className='p-2 mt-1 rounded-[10px]' name='stok' id='stok' />
             </div>
             <div className='grid'>
-              <label htmlFor='type'>Jenis</label>
-              <select name='type' className='p-2 mt-1 rounded-[10px]' onChange={(e) => setJenis(e.target.value)} id='type'>
+              <label htmlFor='jenis'>Jenis</label>
+              <select name='jenis' className='p-2 mt-1 rounded-[10px]' onChange={(e) => setJenis(e.target.value)} id='jenis'>
                 <option value='' hidden></option>
                 <option value='buah'>Buah</option>
                 <option value='bumbu'>Bumbu</option>

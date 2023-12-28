@@ -30,7 +30,7 @@ const Buah = () => {
     fetch(`/products/jenis/${jenis}`)
       .then((res) => res.json())
       .then((data) => {
-        const stockBuah = data.map((item) => ({
+        const stockBuah = data.map((item, i) => ({
           id: item.id,
           kode: item.product_id,
           nama: item.product_name,
@@ -40,7 +40,7 @@ const Buah = () => {
           img: <img className='max-w-[105px]' src={`http://localhost:4000/uploads/${item.gambar}`} />,
           edit: (
             <div className='flex gap-2'>
-              <ModalEditBarang title='Buah' id={item.id} getData={getData} />
+              <ModalEditBarang title={`Buah`} id={item.id} getData={getData} />
               <SwalButtonBarang id={item.id} deleteData={deleteData} />
             </div>
           ),
@@ -60,6 +60,7 @@ const Buah = () => {
   };
   useEffect(() => {
     getData();
+    // console.log(rows)
   }, []);
 
   console.log(rows);
